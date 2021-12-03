@@ -1,0 +1,128 @@
+# coding:utf-8
+import requests
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+import re
+import time
+import csv
+import pymongo
+from lxml import etree
+# from selenium.webdriver.support.wait import WebDriverWait
+
+# option=webdriver.ChromeOptions()
+# option.add_experimental_option('excludeSwitches', ['enable-logging'])
+# 提取网址
+# driver=webdriver.Chrome()\
+class phraseSpider():
+    def __init__(self):
+        # self.all_url=[]
+        self.base_url1="https://www.gswen.cn/idiom/{}/0/0/0/"
+        self.base_url2="https://www.gswen.cn"
+        self.headers= {
+            "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36"
+        }
+    def dataSpider(self):
+        phrases=[]
+        phrase_link=[]
+        all_links=[]
+        phrase_links=[]
+        phrase_types=[]
+        pingying=[]
+        jieshi=[]
+        jieshi1=[]
+        chuchu=[]
+        chuchu1=[]
+        liju=[]
+        liju1=[]
+        lijus=[]
+        pingyings=[]
+        jieshis=[]
+        chuchus=[]
+        all_list=[]
+        phrase_dict={}
+
+
+        phrase_type= ["特殊成语","非四字","季节成语","心情成语","天气成语","颜色成语","生肖成语","人物成语","名人成语","名著成语","其他"]         
+        for i in range(0,11):   
+            url=self.base_url1.format(int(i+1))
+            print(url)   
+            response = requests.get(url,headers=self.headers)
+            content=response.content.decode("utf8","ignore")
+            content = etree.HTML(content)
+        #     # author = content.xpath("//div[@class='typecont']//span//a//text()")#各个朝代作者的定位
+            links=content.xpath("/html/body/div[3]/div[1]/div[5]/a//@href")
+            if(len(links)>1):
+                links.pop()
+            linkson=[self.base_url2+str(i) for i in links]#每一类的每一页网址
+            print(len(linkson))
+            for j in linkson:
+                all_links.append(j)
+            for each in all_links:
+                response = requests.get(each,headers=self.headers)
+                content=response.content.decode("utf8","ignore")
+                content = etree.HTML(content)
+                phrase=content.xpath("/html/body/div[3]/div[1]/ul/li/h3/a//text()")
+                for p in phrase:
+                    phrases.append(p)
+                phrase_link=content.xpath("/html/body/div[3]/div[1]/ul/li/h3/a//@href")
+                phrase_links=[self.base_url2+str(i) for i in phrase_link]
+                for i1 in phrase_links:
+                    response = requests.get(i1,headers=self.headers)
+                    content=response.content.decode("utf-8","ignore")
+                    content = etree.HTML(content)
+                    pingying=content.xpath("/html/body/div[3]/div[1]/div[5]/dl/dd[1]/text()")
+                    jieshi=content.xpath("/html/body/div[3]/div[1]/div[5]/dl/dd[2]//text()")
+                    jieshi1=''.join(map(str,jieshi))
+                    chuchu=content.xpath("/html/body/div[3]/div[1]/div[5]/dl/dd[3]//text()")
+                    chuchu1=''.join(map(str,chuchu))
+                    liju=content.xpath("/html/body/div[3]/div[1]/div[5]/dl/dd[4]//text()")
+                    liju1=''.join(map(str,liju))
+                    pingyings.append(pingying)
+                    jieshis.append(jieshi1)
+                    chuchus.append(chuchu1)
+                    lijus.append(liju1)
+                    phrase_types.append(phrase_type[i])
+            # m=m+1
+        # print(len(phrases),phrases)
+        # print(len(phrase_types),phrase_types)
+        # print(len(pingyings),pingyings)
+        # print(len(jieshis),jieshis)
+        # print(len(chuchus),chuchus)
+        # print(len(lijus),lijus)
+        for i in range(len(phrases)):
+            phrase_dict={
+                "成语":phrases[i],
+                "成语类型":phrase_types[i],
+                "拼音":pingyings[i][0],
+                "解释":jieshis[i],
+                "出处":chuchus[i],
+                "例句":lijus[i]
+                }
+            all_list.append(phrase_dict)
+        print(all_list)
+        return all_list
+
+
+                
+
+    def save_data(self):
+        all_links1=[]
+        all_links1=self.dataSpider()
+        try:
+            client = pymongo.MongoClient(host='127.0.0.1')
+
+            db =client['bencao']
+            collections = db.about_phrase
+            for data in all_links1:
+                # print(data)
+                collections.insert_one(data)
+
+            print("插入成功！")
+        except Exception as e:
+            print(e)
+
+
+if __name__ == "__main__":
+    As=phraseSpider()
+    As.save_data()
+    
