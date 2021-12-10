@@ -18,7 +18,7 @@ user = 'root'
 password = '123'
 dbase = 'recomm'
 
-
+#陈彦池是长江以北吴彦祖
 class Ui_Dialog(object):
     def __init__(self):
         self.count = -1  # 计数 到哪一篇文章
