@@ -1,0 +1,1626 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : MongoDB_27017
+ Source Server Type    : MongoDB
+ Source Server Version : 50002
+ Source Host           : localhost:27017
+ Source Schema         : poetry
+
+ Target Server Type    : MongoDB
+ Target Server Version : 50002
+ File Encoding         : 65001
+
+ Date: 14/12/2021 19:51:32
+*/
+
+
+// ----------------------------
+// Collection structure for authors
+// ----------------------------
+db.getCollection("authors").drop();
+db.createCollection("authors");
+
+// ----------------------------
+// Documents of authors
+// ----------------------------
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7339"),
+    "auth_name": "李白",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_b90660e3e492.aspx",
+    Intro: "李白（701年－762年） ，字太白，号青莲居士，又号“谪仙人”，唐代伟大的浪漫主义诗人，被后人誉为“诗仙”，与杜甫并称为“李杜”，为了与另两位诗人李商隐与杜牧即“小李杜”区别，杜甫与李白又合称“大李杜”。据《新唐书》记载，李白为兴圣皇帝（凉武昭王李暠）九世孙，与李唐诸王同宗。其人爽朗大方，爱饮酒作诗，喜交友。李白深受黄老列庄思想影响，有《李太白集》传世，诗作中多以醉时写的，代表作有《望庐山瀑布》《行路难》《蜀道难》《将进酒》《明堂赋》《早发白帝城》等多首。",
+    Picture: "https://song.gushiwen.cn/authorImg/libai.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed733a"),
+    "auth_name": "苏轼",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_3b99a16ff2dd.aspx",
+    Intro: "（1037年1月8日-1101年8月24日）字子瞻、和仲，号铁冠道人、东坡居士，世称苏东坡、苏仙，汉族，眉州眉山（四川省眉山市）人，祖籍河北栾城，北宋著名文学家、书法家、画家，历史治水名人。苏轼是北宋中期文坛领袖，在诗、词、散文、书、画等方面取得很高成就。文纵横恣肆；诗题材广阔，清新豪健，善用夸张比喻，独具风格，与黄庭坚并称“苏黄”；词开豪放一派，与辛弃疾同是豪放派代表，并称“苏辛”；散文著述宏富，豪放自如，与欧阳修并称“欧苏”，为“唐宋八大家”之一。苏轼善书，“宋四家”之一；擅长文人画，尤擅墨竹、怪石、枯木等。与韩愈、柳宗元和欧阳修合称“千古文章四大家”。作品有《东坡七集》《东坡易传》《东坡乐府》《潇湘竹石图卷》《古木怪石图卷》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/sushi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed733b"),
+    "auth_name": "白居易",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_85097dd0c645.aspx",
+    Intro: "白居易（772年－846年），字乐天，号香山居士，又号醉吟先生，祖籍太原，到其曾祖父时迁居下邽，生于河南新郑。是唐代伟大的现实主义诗人，唐代三大诗人之一。白居易与元稹共同倡导新乐府运动，世称“元白”，与刘禹锡并称“刘白”。白居易的诗歌题材广泛，形式多样，语言平易通俗，有“诗魔”和“诗王”之称。官至翰林学士、左赞善大夫。公元846年，白居易在洛阳逝世，葬于香山。有《白氏长庆集》传世，代表诗作有《长恨歌》、《卖炭翁》、《琵琶行》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/baijuyi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed733c"),
+    "auth_name": "杜甫",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_515ea88d1858.aspx",
+    Intro: "杜甫（712－770），字子美，自号少陵野老，世称“杜工部”、“杜少陵”等，汉族，河南府巩县（今河南省巩义市）人，唐代伟大的现实主义诗人，杜甫被世人尊为“诗圣”，其诗被称为“诗史”。杜甫与李白合称“李杜”，为了跟另外两位诗人李商隐与杜牧即“小李杜”区别开来，杜甫与李白又合称“大李杜”。他忧国忧民，人格高尚，他的约1400余首诗被保留了下来，诗艺精湛，在中国古典诗歌中备受推崇，影响深远。759-766年间曾居成都，后世有杜甫草堂纪念。",
+    Picture: "https://song.gushiwen.cn/authorImg/dufu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed733d"),
+    "auth_name": "李清照",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_9cb3b7c0e4a0.aspx",
+    Intro: "李清照（1084年3月13日～1155年5月12日）号易安居士，汉族，山东省济南章丘人。宋代（南北宋之交）词人，婉约词派代表，有“千古第一才女”之称。所作词，前期多写其悠闲生活，后期多悲叹身世，情调感伤。形式上善用白描手法，自辟途径，语言清丽。论词强调协律，崇尚典雅，提出词“别是一家”之说，反对以作诗文之法作词。能诗，留存不多，部分篇章感时咏史，情辞慷慨，与其词风不同。有《易安居士文集》《易安词》，已散佚。后人有《漱玉词》辑本。今有《李清照集校注》。",
+    Picture: "https://song.gushiwen.cn/authorImg/liqingzhao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed733e"),
+    "auth_name": "辛弃疾",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_a7900666497f.aspx",
+    Intro: "辛弃疾（1140－1207），南宋词人。原字坦夫，改字幼安，别号稼轩，汉族，历城（今山东济南）人。出生时，中原已为金兵所占。21岁参加抗金义军，不久归南宋。历任湖北、江西、湖南、福建、浙东安抚使等职。一生力主抗金。曾上《美芹十论》与《九议》，条陈战守之策。其词抒写力图恢复国家统一的爱国热情，倾诉壮志难酬的悲愤，对当时执政者的屈辱求和颇多谴责；也有不少吟咏祖国河山的作品。题材广阔又善化用前人典故入词，风格沉雄豪迈又不乏细腻柔媚之处。由于辛弃疾的抗金主张与当政的主和派政见不合，后被弹劾落职，退隐江西带湖。",
+    Picture: "https://song.gushiwen.cn/authorImg/xinqiji.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed733f"),
+    "auth_name": "王维",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_52fceee85532.aspx",
+    Intro: "王维（701年－761年，一说699年—761年），字摩诘，号摩诘居士。汉族，河东蒲州（今山西运城）人，祖籍山西祁县，唐朝诗人，有“诗佛”之称。苏轼评价其：“味摩诘之诗，诗中有画；观摩诘之画，画中有诗。”开元九年（721年）中进士，任太乐丞。王维是盛唐诗人的代表，今存诗400余首，重要诗作有《相思》《山居秋暝》等。王维精通佛学，受禅宗影响很大。佛教有一部《维摩诘经》，是王维名和字的由来。王维诗书画都很有名，多才多艺，音乐也很精通。与孟浩然合称“王孟”。",
+    Picture: "https://song.gushiwen.cn/authorImg/wangwei.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7340"),
+    "auth_name": "纳兰性德",
+    dynasty: "清代",
+    link: "https://so.gushiwen.cn/authorv_01611cc80faf.aspx",
+    Intro: "纳兰性德（1655－1685），满洲人，字容若，号楞伽山人，清代最著名词人之一。其诗词“纳兰词”在清代以至整个中国词坛上都享有很高的声誉，在中国文学史上也占有光彩夺目的一席。他生活于满汉融合时期，其贵族家庭兴衰具有关联于王朝国事的典型性。虽侍从帝王，却向往经历平淡。特殊的生活环境背景，加之个人的超逸才华，使其诗词创作呈现出独特的个性和鲜明的艺术风格。流传至今的《木兰花令·拟古决绝词》——“人生若只如初见，何事秋风悲画扇？等闲变却故人心，却道故人心易变。”富于意境，是其众多代表作之一。",
+    Picture: "https://song.gushiwen.cn/authorImg/nalanxingde.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7341"),
+    "auth_name": "李商隐",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_bc94c92721b8.aspx",
+    Intro: "李商隐（约813年-约858年），字义山，号玉溪（谿）生、樊南生，唐代著名诗人，祖籍河内（今河南省焦作市）沁阳，出生于郑州荥阳。他擅长诗歌写作，骈文文学价值也很高，是晚唐最出色的诗人之一，和杜牧合称“小李杜”，与温庭筠合称为“温李”，因诗文与同时期的段成式、温庭筠风格相近，且三人都在家族里排行第十六，故并称为“三十六体”。其诗构思新奇，风格秾丽，尤其是一些爱情诗和无题诗写得缠绵悱恻，优美动人，广为传诵。但部分诗歌过于隐晦迷离，难于索解，至有“诗家总爱西昆好，独恨无人作郑笺”之说。因处于牛李党争的夹缝之中，一生很不得志。死后葬于家乡沁阳（今河南焦作市沁阳与博爱县交界之处）。作品收录为《李义山诗集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/lishangyin.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7342"),
+    "auth_name": "陆游",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_efd5da0ed1a1.aspx",
+    Intro: "陆游（1125年11月13日－1210年1月26日），字务观，号放翁，汉族，越州山阴（今浙江绍兴）人，尚书右丞陆佃之孙，南宋文学家、史学家、爱国诗人。陆游生逢北宋灭亡之际，少年时即深受家庭爱国思想的熏陶。宋高宗时，参加礼部考试，因受宰臣秦桧排斥而仕途不畅。孝宗时赐进士出身。中年入蜀，投身军旅生活。嘉泰二年（1202年），宋宁宗诏陆游入京，主持编修孝宗、光宗《两朝实录》和《三朝史》，官至宝章阁待制。晚年退居家乡。创作诗歌今存九千多首，内容极为丰富。著有《剑南诗稿》、《渭南文集》、《南唐书》、《老学庵笔记》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/luyou.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7343"),
+    "auth_name": "陶渊明",
+    dynasty: "魏晋",
+    link: "https://so.gushiwen.cn/authorv_07d17f8539d7.aspx",
+    Intro: "陶渊明（约365～427年），字元亮，晚年更名潜，字渊明。别号五柳先生，私谥靖节，世称靖节先生。浔阳柴桑（今江西九江）人。东晋末到刘宋初杰出的诗人、辞赋家、散文家。被誉为“隐逸诗人之宗”、“田园诗派之鼻祖”。是江西首位文学巨匠。曾任江州祭酒、建威参军、镇军参军、彭泽县令等职，最末一次出仕为彭泽县令，八十多天便弃职而去，从此归隐田园。他是中国第一位田园诗人，被称为“古今隐逸诗人之宗”，有《陶渊明集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/taoyuanming.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7344"),
+    "auth_name": "刘禹锡",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_e3c4e8cf2646.aspx",
+    Intro: "刘禹锡（772－842），字梦得，汉族，中国唐朝彭城（今徐州）人，祖籍洛阳，唐朝文学家，哲学家，自称是汉中山靖王后裔，曾任监察御史，是王叔文政治改革集团的一员。唐代中晚期著名诗人，有“诗豪”之称。他的家庭是一个世代以儒学相传的书香门第。政治上主张革新，是王叔文派政治革新活动的中心人物之一。后来永贞革新失败被贬为朗州司马（今湖南常德）。据湖南常德历史学家、收藏家周新国先生考证刘禹锡被贬为朗州司马其间写了著名的“汉寿城春望”。",
+    Picture: "https://song.gushiwen.cn/authorImg/liuyuxi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7345"),
+    "auth_name": "李煜",
+    dynasty: "五代",
+    link: "https://so.gushiwen.cn/authorv_05635286bf64.aspx",
+    Intro: "李煜（937年8月15日―978年8月13日），南唐元宗（即南唐中主）李璟第六子，初名从嘉，字重光，号钟隐、莲峰居士，汉族，生于金陵（今江苏南京），祖籍彭城（今江苏徐州铜山区），南唐最后一位国君。李煜精书法、工绘画、通音律，诗文均有一定造诣，尤以词的成就最高。李煜的词，继承了晚唐以来温庭筠、韦庄等花间派词人的传统，又受李璟、冯延巳等的影响，语言明快、形象生动、用情真挚，风格鲜明，其亡国后词作更是题材广阔，含意深沉，在晚唐五代词中别树一帜，对后世词坛影响深远。",
+    Picture: "https://song.gushiwen.cn/authorImg/liyu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7346"),
+    "auth_name": "杜牧",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_727e9dff8850.aspx",
+    Intro: "杜牧（公元803－约852年），字牧之，号樊川居士，汉族，京兆万年（今陕西西安）人，唐代诗人。杜牧人称“小杜”，以别于杜甫。与李商隐并称“小李杜”。因晚年居长安南樊川别墅，故后世称“杜樊川”，著有《樊川文集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/dumu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7347"),
+    "auth_name": "欧阳修",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_7ab3b8200774.aspx",
+    Intro: "欧阳修（1007－1072），字永叔，号醉翁，晚号“六一居士”。汉族，吉州永丰（今江西省永丰县）人，因吉州原属庐陵郡，以“庐陵欧阳修”自居。谥号文忠，世称欧阳文忠公。北宋政治家、文学家、史学家，与韩愈、柳宗元、王安石、苏洵、苏轼、苏辙、曾巩合称“唐宋八大家”。后人又将其与韩愈、柳宗元和苏轼合称“千古文章四大家”。",
+    Picture: "https://song.gushiwen.cn/authorImg/ouyangxiu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7348"),
+    "auth_name": "韩愈",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_1abe13750637.aspx",
+    Intro: "韩愈（768年－824年12月25日），字退之，河南河阳（今河南省孟州市）人，自称“祖籍昌黎郡”，世称“韩昌黎”、“昌黎先生”。唐代中期大臣，文学家、思想家、政治家，秘书郎韩仲卿之子。元和十二年（817年），出任宰相裴度行军司马，从平“淮西之乱”。直言谏迎佛骨，贬为潮州刺史。宦海沉浮，累迁吏部侍郎，人称“韩吏部”。长庆四年（824年），韩愈病逝，年五十七，追赠礼部尚书，谥号为“文”，故称“韩文公”。元丰元年（1078年），追封昌黎郡伯，并从祀孔庙。韩愈作为唐代古文运动的倡导者，名列“唐宋八大家”之首，有“文章巨公”和“百代文宗”之名。与柳宗元并称“韩柳”，与柳宗元、欧阳修和苏轼并称“千古文章四大家”。倡导“文道合一”、“气盛言宜”、“务去陈言”、“文从字顺”等写作理论，对后人具有指导意义。著有《韩昌黎集》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/hanyu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7349"),
+    "auth_name": "王安石",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_6485481407d1.aspx",
+    Intro: "王安石（1021年12月18日－1086年5月21日），字介甫，号半山，谥文，封荆国公。世人又称王荆公。汉族，北宋抚州临川人（今江西省抚州市临川区邓家巷人），中国北宋著名政治家、思想家、文学家、改革家，唐宋八大家之一。欧阳修称赞王安石：“翰林风月三千首，吏部文章二百年。老去自怜心尚在，后来谁与子争先。”传世文集有《王临川集》、《临川集拾遗》等。其诗文各体兼擅，词虽不多，但亦擅长，且有名作《桂枝香》等。而王荆公最得世人哄传之诗句莫过于《泊船瓜洲》中的“春风又绿江南岸，明月何时照我还。”",
+    Picture: "https://song.gushiwen.cn/authorImg/wanganshi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed734a"),
+    "auth_name": "柳宗元",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_0ba13a22799e.aspx",
+    Intro: "柳宗元（773年－819年），字子厚，唐代河东（今山西运城）人，杰出诗人、哲学家、儒学家乃至成就卓著的政治家，唐宋八大家之一。著名作品有《永州八记》等六百多篇文章，经后人辑为三十卷，名为《柳河东集》。因为他是河东人，人称柳河东，又因终于柳州刺史任上，又称柳柳州。柳宗元与韩愈同为中唐古文运动的领导人物，并称“韩柳”。在中国文化史上，其诗、文成就均极为杰出，可谓一时难分轩轾。",
+    Picture: "https://song.gushiwen.cn/authorImg/liuzongyuan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed734b"),
+    "auth_name": "孟浩然",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_3811e4e1f460.aspx",
+    Intro: "孟浩然（689年—740年），字浩然，号孟山人，襄州襄阳（今湖北襄阳）人，唐代著名的山水田园派诗人，世称“孟襄阳”。因他未曾入仕，又称之为“孟山人”。浩然少好节义，喜济人患难，工于诗。年四十游京师，唐玄宗诏咏其诗，至“不才明主弃”之语，玄宗谓：“卿自不求仕，朕未尝弃卿，奈何诬我？”因放还未仕，后隐居鹿门山，著诗二百余首。",
+    Picture: "https://song.gushiwen.cn/authorImg/menghaoran.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed734c"),
+    "auth_name": "柳永",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_682bdf0fd34e.aspx",
+    Intro: "柳永，（约984年—约1053年）北宋著名词人，婉约派代表人物。汉族，崇安（今福建武夷山）人，原名三变，字景庄，后改名永，字耆卿，排行第七，又称柳七。宋仁宗朝进士，官至屯田员外郎，故世称柳屯田。他自称“奉旨填词柳三变”，以毕生精力作词，并以“白衣卿相”自诩。其词多描绘城市风光和歌妓生活，尤长于抒写羁旅行役之情，创作慢词独多。铺叙刻画，情景交融，语言通俗，音律谐婉，在当时流传极其广泛，人称“凡有井水饮处，皆能歌柳词”，婉约派最具代表性的人物之一，对宋词的发展有重大影响，代表作 《雨霖铃》《八声甘州》。",
+    Picture: "https://song.gushiwen.cn/authorImg/liuyong2.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed734d"),
+    "auth_name": "屈原",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_9c69482f885f.aspx",
+    Intro: "屈原（约公元前340—公元前278年），芈姓，屈氏，名平，字原，又自云名正则，字灵均，出生于楚国丹阳秭归（今湖北宜昌），战国时期楚国诗人、政治家。因遭贵族排挤诽谤，被先后流放至汉北和沅湘流域。楚国郢都被秦军攻破后，自沉于汨罗江，以身殉楚国。他是中国历史上一位伟大的爱国诗人，中国浪漫主义文学的奠基人，“楚辞”的创立者和代表作家，开辟了“香草美人”的传统，被誉为“楚辞之祖”，楚国有名的辞赋家宋玉、唐勒、景差都受到屈原的影响。屈原投江自尽的日子相传是农历五月初五，即端午节。端午节最初是中国人民祛病防疫的节日。吴越一带春秋之前有在农历五月初五以龙舟竞渡形式举行部落图腾祭祀的习俗。后因屈原在这一天死去，便演变成了中国人民纪念屈原的传统节日。",
+    Picture: "https://song.gushiwen.cn/authorImg/quyuan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed734e"),
+    "auth_name": "曹操",
+    dynasty: "两汉",
+    link: "https://so.gushiwen.cn/authorv_f4d9b1ed94dc.aspx",
+    Intro: "曹操（155年－220年正月庚子），字孟德，一名吉利，小字阿瞒，沛国谯（今安徽亳州）人，汉族。东汉末年杰出的政治家、军事家、文学家、书法家。三国中曹魏政权的缔造者，其子曹丕称帝后，追尊为武皇帝，庙号太祖。曹操精兵法，善诗歌，抒发自己的政治抱负，并反映汉末人民的苦难生活，气魄雄伟，慷慨悲凉；散文亦清峻整洁，开启并繁荣了建安文学，给后人留下了宝贵的精神财富，史称建安风骨，鲁迅评价其为“改造文章的祖师”。同时曹操也擅长书法，尤工章草，唐朝张怀瓘在《书断》中评其为“妙品”。",
+    Picture: "https://song.gushiwen.cn/authorImg/caocao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed734f"),
+    "auth_name": "元稹",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_201a0677dee4.aspx",
+    Intro: "元稹（779年－831年，或唐代宗大历十四年至文宗大和五年），字微之，别字威明，唐洛阳人（今河南洛阳）。父元宽，母郑氏。为北魏宗室鲜卑族拓跋部后裔，是什翼犍之十四世孙。早年和白居易共同提倡“新乐府”。世人常把他和白居易并称“元白”。",
+    Picture: "https://song.gushiwen.cn/authorImg/yuanzhen.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7350"),
+    "auth_name": "李贺",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_74d46d599f15.aspx",
+    Intro: "李贺（约公元790年-约817年），字长吉，汉族，唐代河南福昌（今河南洛阳宜阳县）人，家居福昌昌谷，后世称李昌谷，是唐宗室郑王李亮后裔。有“诗鬼”之称，是与“诗圣”杜甫、“诗仙”李白、“诗佛”王维相齐名的唐代著名诗人。著有《昌谷集》。李贺是中唐的浪漫主义诗人，与李白、李商隐称为唐代三李。有“‘太白仙才，长吉鬼才’之说。李贺是继屈原、李白之后，中国文学史上又一位颇享盛誉的浪漫主义诗人。李贺长期的抑郁感伤，焦思苦吟的生活方式，元和八年（813年）因病辞去奉礼郎回昌谷，27岁英年早逝。",
+    Picture: "https://song.gushiwen.cn/authorImg/lihe.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7351"),
+    "auth_name": "温庭筠",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_c367ccd8cd08.aspx",
+    Intro: "温庭筠（约812或说801、824）年—约866或说870、882年）唐代诗人、词人。本名岐，字飞卿，太原祁（今山西祁县东南）人。富有天才，文思敏捷，每入试，押官韵，八叉手而成八韵，所以也有“温八叉”之称。然恃才不羁，又好讥刺权贵，多犯忌讳，取憎于时，故屡举进士不第，长被贬抑，终生不得志。官终国子助教。精通音律。工诗，与李商隐齐名，时称“温李”。其诗辞藻华丽，秾艳精致，内容多写闺情。其词艺术成就在晚唐诸词人之上，为“花间派”首要词人，对词的发展影响较大。在词史上，与韦庄齐名，并称“温韦”。存词七十余首。后人辑有《温飞卿集》及《金奁集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/wentingyun.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7352"),
+    "auth_name": "王昌龄",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_d9343fa5dac7.aspx",
+    Intro: "王昌龄 (698— 756），字少伯，河东晋阳（今山西太原）人。盛唐著名边塞诗人，后人誉为“七绝圣手”。早年贫贱，困于农耕，而立之年，始中进士。初任秘书省校书郎，又中博学宏辞，授汜水尉，因事贬岭南。与李白、高适、王维、王之涣、岑参等交厚。开元末返长安，改授江宁丞。被谤谪龙标尉。安史乱起，为刺史闾丘所杀。其诗以七绝见长，尤以登第之前赴西北边塞所作边塞诗最著，有“诗家夫子王江宁”之誉（亦有“诗家天子王江宁”的说法）。",
+    Picture: "https://song.gushiwen.cn/authorImg/wangchangling.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7353"),
+    "auth_name": "范仲淹",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_c2c3edb9c1b1.aspx",
+    Intro: "范仲淹（989年10月1日－1052年6月19日），字希文。祖籍邠州，后移居苏州吴县。北宋初年政治家、文学家。范仲淹幼年丧父，母亲改嫁长山朱氏，遂更名朱说。大中祥符八年（1015年），范仲淹苦读及第，授广德军司理参军。后历任兴化县令、秘阁校理、陈州通判、苏州知州等职，因秉公直言而屡遭贬斥。皇祐四年（1052年），改知颍州，在扶疾上任的途中逝世，年六十四。累赠太师、中书令兼尚书令、楚国公，谥号“文正”，世称范文正公。",
+    Picture: "https://song.gushiwen.cn/authorImg/fanzhongyan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7354"),
+    "auth_name": "王勃",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_e6b970da08cd.aspx",
+    Intro: "王勃（649或650～676或675年），唐代诗人。汉族，字子安。绛州龙门(今山西河津)人。王勃与杨炯、卢照邻、骆宾王齐名，世称“初唐四杰”，其中王勃是“初唐四杰”之首。唐高宗上元三年（676年）八月，自交趾探望父亲返回时，不幸渡海溺水，惊悸而死。王勃在诗歌体裁上擅长五律和五绝，代表作品有《送杜少府之任蜀州》等；主要文学成就是骈文，无论是数量还是质量，堪称一时之最，代表作品有《滕王阁序》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/wangbo.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7355"),
+    "auth_name": "岑参",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_0969d1da1ac1.aspx",
+    Intro: "岑参（718年？－769年？），荆州江陵（今湖北江陵县）人或南阳棘阳（今河南南阳市）人，唐代诗人，与高适并称“高岑”。岑参早岁孤贫，从兄就读，遍览史籍。唐玄宗天宝三载（744年）进士，初为率府兵曹参军。后两次从军边塞，先在安西节度使高仙芝幕府掌书记；天宝末年，封常清为安西北庭节度使时，为其幕府判官。代宗时，曾官嘉州刺史（今四川乐山），世称“岑嘉州”。大历五年（770年）卒于成都。",
+    Picture: "https://song.gushiwen.cn/authorImg/cencan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7356"),
+    "auth_name": "曹植",
+    dynasty: "两汉",
+    link: "https://so.gushiwen.cn/authorv_6c695909f577.aspx",
+    Intro: "曹植（192－232），字子建，沛国谯（今安徽省亳州市）人。三国曹魏著名文学家，建安文学代表人物。魏武帝曹操之子，魏文帝曹丕之弟，生前曾为陈王，去世后谥号“思”，因此又称陈思王。后人因他文学上的造诣而将他与曹操、曹丕合称为“三曹”，南朝宋文学家谢灵运更有“天下才有一石，曹子建独占八斗”的评价。王士祯尝论汉魏以来二千年间诗家堪称“仙才”者，曹植、李白、苏轼三人耳。",
+    Picture: "https://song.gushiwen.cn/authorImg/caozhi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7357"),
+    "auth_name": "左丘明",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_1585930d4e76.aspx",
+    Intro: "丘明（姓姜，氏丘，名明），华夏人，生于前502年，死于前422年，享年80岁。丘穆公吕印的后代。本名丘明，因其先祖曾任楚国的左史官，故在姓前添“左”字，故称左史官丘明先生，世称“左丘明”，后为鲁国太史 。左氏世为鲁国太史，至丘明则约与孔子（前551-479）同时，而年辈稍晚。他是当时著名史家、学者与思想家，著有《春秋左氏传》、《国语》等。左丘明的最重要贡献在于其所著《春秋左氏传》与《国语》二书。左氏家族世为太史，左丘明又与孔子一起“如周，观书于周史”，故熟悉诸国史事，并深刻理解孔子思想。",
+    Picture: "https://song.gushiwen.cn/authorImg/zuoqiuming.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7358"),
+    "auth_name": "晏殊",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_20e68621f077.aspx",
+    Intro: "晏殊【yàn shū】（991-1055）字同叔，著名词人、诗人、散文家，北宋抚州府临川城人（今江西进贤县文港镇沙河人，位于香楠峰下，其父为抚州府手力节级），是当时的抚州籍第一个宰相。晏殊与其第七子晏几道（1037-1110），在当时北宋词坛上，被称为“大晏”和“小晏”。",
+    Picture: "https://song.gushiwen.cn/authorImg/yanshu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7359"),
+    "auth_name": "司马迁",
+    dynasty: "两汉",
+    link: "https://so.gushiwen.cn/authorv_f01178aaa8c0.aspx",
+    Intro: "司马迁（前145年或前135年～不可考），字子长，生于龙门（西汉夏阳、即今陕西省韩城市，另说今山西省河津市），西汉史学家、文学家、思想家。司马谈之子，任太史令，被后世尊称为史迁、太史公、历史之父。他以其“究天人之际，通古今之变，成一家之言”的史识创作了中国第一部纪传体通史《史记》（原名《太史公书》）。被公认为是中国史书的典范，该书记载了从上古传说中的黄帝时期，到汉武帝元狩元年，长达3000多年的历史，是“二十五史”之首，被鲁迅誉为“史家之绝唱，无韵之离骚”。",
+    Picture: "https://song.gushiwen.cn/authorImg/simaqian.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed735a"),
+    "auth_name": "秦观",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_d4825d86f017.aspx",
+    Intro: "秦观（1049-1100）字太虚，又字少游，别号邗沟居士，世称淮海先生。汉族，北宋高邮（今江苏）人，官至太学博士，国史馆编修。秦观一 生坎坷，所写诗词，高古沉重，寄托身世，感人至深。秦观生前行踪所至之处，多有遗迹。如浙江杭州的秦少游祠，丽水的秦少游塑像、淮海先生祠、莺花亭；青田的秦学士祠；湖南郴州三绝碑；广西横县的海棠亭、醉乡亭、淮海堂、淮海书院等。秦观墓在无锡惠山之北粲山上，墓碑上书“秦龙图墓”几个大字。有秦家村、秦家大院以及省级文物保护单位古文游台。",
+    Picture: "https://song.gushiwen.cn/authorImg/qinguan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed735b"),
+    "auth_name": "杨万里",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_677ad0bb97e7.aspx",
+    Intro: "杨万里（1127年10月29日－1206年6月15日），字廷秀，号诚斋。吉州吉水（今江西省吉水县黄桥镇湴塘村）人。南宋著名诗人、大臣，与陆游、尤袤、范成大并称为“中兴四大诗人”。因宋光宗曾为其亲书“诚斋”二字，故学者称其为“诚斋先生”。杨万里一生作诗两万多首，传世作品有四千二百首，被誉为一代诗宗。他创造了语言浅近明白、清新自然，富有幽默情趣的“诚斋体”。杨万里的诗歌大多描写自然景物，且以此见长。他也有不少篇章反映民间疾苦、抒发爱国感情的作品。著有《诚斋集》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/yangwanli.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed735c"),
+    "auth_name": "诸葛亮",
+    dynasty: "两汉",
+    link: "https://so.gushiwen.cn/authorv_e82a672a1ca9.aspx",
+    Intro: "诸葛亮（181－234），字孔明、号卧龙（也作伏龙），汉族，徐州琅琊阳都（今山东临沂市沂南县）人，三国时期蜀汉丞相、杰出的政治家、军事家、散文家、书法家。在世时被封为武乡侯，死后追谥忠武侯，东晋政权特追封他为武兴王。诸葛亮为匡扶蜀汉政权，呕心沥血，鞠躬尽瘁，死而后已。其散文代表作有《出师表》、《诫子书》等。曾发明木牛流马、孔明灯等，并改造连弩，叫做诸葛连弩，可一弩十矢俱发。于234年在五丈原（今宝鸡岐山境内）逝世。诸葛亮在后世受到极大尊崇，成为后世忠臣楷模，智慧化身。成都、宝鸡、汉中、南阳等地有武侯祠，杜甫作《蜀相》赞诸葛亮。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhugeliang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed735d"),
+    "auth_name": "韦应物",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_00ea9cc9fdbf.aspx",
+    Intro: "韦应物（737～792），中国唐代诗人。汉族，长安(今陕西西安)人。今传有10卷本《韦江州集》、两卷本《韦苏州诗集》、10卷本《韦苏州集》。散文仅存一篇。因出任过苏州刺史，世称“韦苏州”。诗风恬淡高远，以善于写景和描写隐逸生活著称。",
+    Picture: "https://song.gushiwen.cn/authorImg/weiyingwu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed735e"),
+    "auth_name": "贾岛",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_568070f3fde8.aspx",
+    Intro: "贾岛（779～843年），字浪（阆）仙，唐代诗人。汉族，唐朝河北道幽州范阳县（今河北省涿州市）人。早年出家为僧，号无本。自号“碣石山人”。据说在洛阳的时候后因当时有命令禁止和尚午后外出，贾岛做诗发牢骚，被韩愈发现其才华。后受教于韩愈，并还俗参加科举，但累举不中第。唐文宗的时候被排挤，贬做长江主簿。唐武宗会昌年初由普州司仓参军改任司户，未任病逝。",
+    Picture: "https://song.gushiwen.cn/authorImg/jiadao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed735f"),
+    "auth_name": "唐寅",
+    dynasty: "明代",
+    link: "https://so.gushiwen.cn/authorv_bdbd5be2bd0b.aspx",
+    Intro: "唐寅（1470—1523），字伯虎，一字子畏，号六如居士、桃花庵主、鲁国唐生、逃禅仙吏等，汉族，南直隶苏州吴县人。明代著名画家、文学家。据传他于明宪宗成化六年庚寅年寅月寅日寅时生。他玩世不恭而又才气横溢，诗文擅名，与祝允明、文征明、徐祯卿并称“江南四大才子（吴门四才子）”，画名更著，与沈周、文征明、仇英并称“吴门四家”。",
+    Picture: "https://song.gushiwen.cn/authorImg/tangyin.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7360"),
+    "auth_name": "晏几道",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_1e6d9d77697a.aspx",
+    Intro: "晏几道（1038年5月29日—1110年），北宋著名词人。字叔原，号小山，抚州临川文港沙河（今属江西省南昌市进贤县）人。晏殊第七子。 历任颍昌府许田镇监、乾宁军通判、开封府判官等。性孤傲，中年家境中落。与其父晏殊合称“二晏”。词风似父而造诣过之。工于言情，其小令语言清丽，感情深挚，尤负盛名。表达情感直率。多写爱情生活，是婉约派的重要作家。有《小山词》留世。",
+    Picture: "https://song.gushiwen.cn/authorImg/yanjidao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7361"),
+    "auth_name": "方干",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_76758677c136.aspx",
+    Intro: "方干（809—888）字雄飞，号玄英，睦州青溪(今淳安)人。擅长律诗，清润小巧，且多警句。其诗有的反映社会动乱，同情人民疾苦；有的抒发怀才不遇，求名未遂的感怀。文德元年(888年)，方干客死会稽，归葬桐江。门人相与论德，谥曰“玄英先生”，并搜集他的遗诗370余篇，编成《方干诗集》传世。《全唐诗》编有方干诗6卷348篇。宋景佑年间，范仲淹守睦州，绘方干像于严陵祠配享。",
+    Picture: "https://song.gushiwen.cn/authorImg/fanggan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7362"),
+    "auth_name": "刘长卿",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_b3e23d54ee99.aspx",
+    Intro: "刘长卿(709—789)，字文房，汉族，宣城（今属安徽）人，唐代诗人。后迁居洛阳，河间（今属河北）为其郡望。唐玄宗天宝年间进士。肃宗至德中官监察御史，苏州长洲县尉，代宗大历中任转运使判官，知淮西、鄂岳转运留后，又被诬再贬睦州司马。因刚而犯上，两度迁谪。德宗建中年间，官终随州刺史，世称刘随州。",
+    Picture: "https://song.gushiwen.cn/authorImg/liuchangqing.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7363"),
+    "auth_name": "孟郊",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_2f7f3273612a.aspx",
+    Intro: "孟郊，(751～814)，唐代诗人。字东野。汉族，湖州武康（今浙江德清）人，祖籍平昌（今山东临邑东北），先世居洛阳（今属河南）。唐代著名诗人。现存诗歌500多首，以短篇的五言古诗最多，代表作有《游子吟》。有“诗囚”之称，又与贾岛齐名，人称“郊寒岛瘦”。元和九年，在阌乡(今河南灵宝)因病去世。张籍私谥为贞曜先生。",
+    Picture: "https://song.gushiwen.cn/authorImg/mengjiao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7364"),
+    "auth_name": "朱熹",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_ae228ff17e71.aspx",
+    Intro: "朱熹（1130年9月15日～1200年4月23日），行五十二，小名沋郎，小字季延，字元晦，一字仲晦，号晦庵，晚称晦翁，又称紫阳先生、考亭先生、沧州病叟、云谷老人、逆翁。谥文，又称朱文公。汉族，祖籍南宋江南东路徽州府婺源县（今江西省婺源），出生于南剑州尤溪（今属福建三明市）。南宋著名的理学家、思想家、哲学家、教育家、诗人、闽学派的代表人物，世称朱子，是孔子、孟子以来最杰出的弘扬儒学的大师。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhuxi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7365"),
+    "auth_name": "岳飞",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_bc5bd15a8c34.aspx",
+    Intro: "岳飞（1103—1142），字鹏举，宋相州汤阴县永和乡孝悌里（今河南安阳市汤阴县程岗村）人，中国历史上著名的军事家、战略家、民族英雄，位列南宋中兴四将之首。岳飞是南宋最杰出的统帅，他重视人民抗金力量，缔造了“连结河朔”之谋，主张黄河以北的抗金义军和宋军互相配合，夹击金军，以收复失地。岳飞的文学才华也是将帅中少有的，他的不朽词作《满江红》，是千古传诵的爱国名篇。葬于西湖畔栖霞岭。",
+    Picture: "https://song.gushiwen.cn/authorImg/yuefei.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7366"),
+    "auth_name": "韦庄",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_7ce628a673ef.aspx",
+    Intro: "韦庄（约836年－ 约910年），字端己，汉族，长安杜陵（今中国陕西省西安市附近）人，晚唐诗人、词人，五代时前蜀宰相。文昌右相韦待价七世孙、苏州刺史韦应物四世孙。韦庄工诗，与温庭筠同为“花间派”代表作家，并称“温韦”。所著长诗《秦妇吟》反映战乱中妇女的不幸遭遇，在当时颇负盛名，与《孔雀东南飞》《木兰诗》并称“乐府三绝”。有《浣花集》十卷，后人又辑其词作为《浣花词》。《全唐诗》录其诗三百一十六首。",
+    Picture: "https://song.gushiwen.cn/authorImg/weizhuang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7367"),
+    "auth_name": "黄庭坚",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_252e1b6ee61f.aspx",
+    Intro: "黄庭坚（1045.8.9-1105.5.24），字鲁直，号山谷道人，晚号涪翁，洪州分宁（今江西省九江市修水县）人，北宋著名文学家、书法家，为盛极一时的江西诗派开山之祖，与杜甫、陈师道和陈与义素有“一祖三宗”（黄庭坚为其中一宗）之称。与张耒、晁补之、秦观都游学于苏轼门下，合称为“苏门四学士”。生前与苏轼齐名，世称“苏黄”。著有《山谷词》，且黄庭坚书法亦能独树一格，为“宋四家”之一。",
+    Picture: "https://song.gushiwen.cn/authorImg/huangtingjian.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7368"),
+    "auth_name": "曹雪芹",
+    dynasty: "清代",
+    link: "https://so.gushiwen.cn/authorv_7d4ee0783235.aspx",
+    Intro: "曹雪芹（约1715年5月28日—约1763年2月12日），名霑，字梦阮，号雪芹，又号芹溪、芹圃，中国古典名著《红楼梦》的作者，祖籍存在争议（辽宁辽阳、河北丰润或辽宁铁岭），出生于江宁（今南京），曹雪芹出身清代内务府正白旗包衣世家，他是江宁织造曹寅之孙，曹顒之子（一说曹頫之子）。乾隆二十七年（1762年），幼子夭亡，他陷于过度的忧伤和悲痛，卧床不起。乾隆二十八年（1763年）除夕（2月12日），因贫病无医而逝。关于曹雪芹逝世的年份，另有乾隆二十九年除夕（1764年2月1日）、甲申（1764年）初春之说。",
+    Picture: "https://song.gushiwen.cn/authorImg/caoxueqin.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7369"),
+    "auth_name": "庄周",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_6e442cfc26e0.aspx",
+    Intro: "庄子，姓庄，名周，战国时期宋国蒙人。战国中期道家学派代表人物，思想家、哲学家、文学家，庄学的创立者，与老子并称“老庄”。最早提出的“内圣外王”思想对儒家影响深远。洞悉易理，指出“《易》以道阴阳”，其“三籁”思想与《易经》三才之道相合。其文想象力极为丰富，语言运用自如，灵活多变，能把微妙难言的哲理说得引人入胜。代表作品为《庄子》，其中名篇有《逍遥游》《齐物论》《养生主》等。其作品被称为“文学的哲学，哲学的文学”。据传庄子尝隐居南华山，卒葬南华山，故唐玄宗天宝初，被诏封为南华真人，其书《庄子》被奉为《南华真经》。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhuangzhou.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed736a"),
+    "auth_name": "高适",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_b44661291893.aspx",
+    Intro: "高适（704—765年），字达夫，一字仲武，渤海蓨（今河北景县）人，后迁居宋州宋城（今河南商丘睢阳）。安东都护高侃之孙，唐代大臣、诗人。曾任刑部侍郎、散骑常侍，封渤海县侯，世称高常侍。于永泰元年正月病逝，卒赠礼部尚书，谥号忠。作为著名边塞诗人，高适与岑参并称“高岑”，与岑参、王昌龄、王之涣合称“边塞四诗人”。其诗笔力雄健，气势奔放，洋溢着盛唐时期所特有的奋发进取、蓬勃向上的时代精神。有文集二十卷。",
+    Picture: "https://song.gushiwen.cn/authorImg/gaoshi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed736b"),
+    "auth_name": "周邦彦",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_40ce21be572d.aspx",
+    Intro: "周邦彦（1056年－1121年），中国北宋末期著名的词人，字美成，号清真居士，汉族，钱塘（今浙江杭州）人。历官太学正、庐州教授、知溧水县等。徽宗时为徽猷阁待制，提举大晟府。精通音律，曾创作不少新词调。作品多写闺情、羁旅，也有咏物之作。格律谨严。语言典丽精雅。长调尤善铺叙。为后来格律派词人所宗。旧时词论称他为“词家之冠”。有《清真集》传世。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhoubangyan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed736c"),
+    "auth_name": "文天祥",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_7ef6502f1e96.aspx",
+    Intro: "文天祥（1236.6.6－1283.1.9），字履善，又字宋瑞，自号文山，浮休道人。汉族，吉州庐陵（今江西吉安县）人，南宋末大臣，文学家，民族英雄。宝祐四年（1256年）进士，官到右丞相兼枢密使。被派往元军的军营中谈判，被扣留。后脱险经高邮嵇庄到泰县塘湾，由南通南归，坚持抗元。祥兴元年（1278年）兵败被张弘范俘虏，在狱中坚持斗争三年多，后在柴市从容就义。著有《过零丁洋》、《文山诗集》、《指南录》、《指南后录》、《正气歌》等作品。",
+    Picture: "https://song.gushiwen.cn/authorImg/wentianxiang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed736d"),
+    "auth_name": "罗隐",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_3de7172b3782.aspx",
+    Intro: "罗隐（833年2月16日—910年1月26日），字昭谏，新城（今浙江富阳市新登镇）人，唐代诗人。生于公元833年（大和七年），大中十三年（公元859年）底至京师，应进士试，历七年不第。咸通八年（公元867年）乃自编其文为《谗书》，益为统治阶级所憎恶，所以罗衮赠诗说：“谗书虽胜一名休”。后来又断断续续考了几年，总共考了十多次，自称“十二三年就试期”，最终还是铩羽而归，史称“十上不第”。黄巢起义后，避乱隐居九华山，光启三年（公元887年），55岁时归乡依吴越王钱镠，历任钱塘令、司勋郎中、给事中等职。公元909年（五代后梁开平三年）去世，享年77岁。",
+    Picture: "https://song.gushiwen.cn/authorImg/luoyin.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed736e"),
+    "auth_name": "张九龄",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_0f2fe2d36f61.aspx",
+    Intro: "张九龄(678-740) 唐开元尚书丞相，诗人。字子寿，一名博物，汉族，韶州曲江（今广东韶关市）人。长安年间进士。官至中书侍郎同中书门下平章事。后罢相，为荆州长史。诗风清淡。有《曲江集》。他是一位有胆识、有远见的著名政治家、文学家、诗人、名相。他忠耿尽职，秉公守则，直言敢谏，选贤任能，不徇私枉法，不趋炎附势，敢与恶势力作斗争，为“开元之治”作出了积极贡献。他的五言古诗，以素练质朴的语言，寄托深远的人生慨望，对扫除唐初所沿习的六朝绮靡诗风，贡献尤大。誉为“岭南第一人”。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangjiuling.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed736f"),
+    "auth_name": "张籍",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_05460f6423b0.aspx",
+    Intro: "张籍（约767～约830），唐代诗人。字文昌，汉族，和州乌江（今安徽和县）人，郡望苏州吴（今江苏苏州）。先世移居和州，遂为和州乌江（今安徽和县乌江镇）人。世称“张水部”、“张司业”。张籍的乐府诗与王建齐名，并称“张王乐府”。著名诗篇有《塞下曲》《征妇怨》《采莲曲》《江南曲》。《张籍籍贯考辨》认为，韩愈所说的“吴郡张籍”乃谓其郡望，并引《新唐书·张籍传》、《唐诗纪事》、《舆地纪胜》等史传材料，驳苏州之说而定张籍为乌江人。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangji.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7370"),
+    "auth_name": "马致远",
+    dynasty: "元代",
+    link: "https://so.gushiwen.cn/authorv_d0f71489043c.aspx",
+    Intro: "马致远（1250年-1321年），字千里，号东篱（一说字致远，晚号“东篱”），汉族，大都（今北京，有异议）人。他的年辈晚于关汉卿、白朴等人，生年当在至元（始于1264）之前，卒年当在至治改元到泰定元年（1321—1324）之间，与关汉卿、郑光祖、白朴并称“元曲四大家”，是我国元代时著名大戏剧家、散曲家。",
+    Picture: "https://song.gushiwen.cn/authorImg/mazhiyuan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7371"),
+    "auth_name": "齐己",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_236f882d5f10.aspx",
+    Intro: "齐己（863年—937年）出家前俗名胡德生，晚年自号衡岳沙门，湖南长沙宁乡县祖塔乡人，唐朝晚期著名诗僧。",
+    Picture: "https://song.gushiwen.cn/authorImg/qiji.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7372"),
+    "auth_name": "卓文君",
+    dynasty: "两汉",
+    link: "https://so.gushiwen.cn/authorv_ffbc39f27901.aspx",
+    Intro: "卓文君，汉代才女，西汉临邛（属今四川邛崃）人，与汉代著名文人司马相如的一段爱情佳话至今还被人津津乐道。她也有不少佳作流传后世。以“愿得一心人，白头不相离”为著名。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhuowenjun.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7373"),
+    "auth_name": "陈子昂",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_be16b2b23d0a.aspx",
+    Intro: "陈子昂（公元661～公元702），字伯玉，梓州射洪（今四川省射洪市）人，唐代文学家、诗人，初唐诗文革新人物之一。因曾任右拾遗，后世称陈拾遗。陈子昂存诗共100多首，其诗风骨峥嵘，寓意深远，苍劲有力。其中最有代表性的有组诗《感遇》38首，《蓟丘览古》7首和《登幽州台歌》、《登泽州城北楼宴》等。陈子昂与司马承祯、卢藏用、宋之问、王适、毕构、李白、孟浩然、王维、贺知章称为仙宗十友。",
+    Picture: "https://song.gushiwen.cn/authorImg/chenziang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7374"),
+    "auth_name": "荀子",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_1a92cf411c9c.aspx",
+    Intro: "荀子（约公元前313年－公元前238年），名况，字卿，华夏族（汉族），战国末期赵国人。著名思想家、文学家、政治家，时人尊称“荀卿”。西汉时因避汉宣帝刘询讳，因“荀”与“孙”二字古音相通，故又称孙卿。曾三次出任齐国稷下学宫的祭酒，后为楚兰陵（位于今山东兰陵县）令。荀子对儒家思想有所发展，提倡性恶论，其学说常被后人拿来跟孟子的‘性善说’比较，荀子对重新整理儒家典籍也有相当显著的贡献。",
+    Picture: "https://song.gushiwen.cn/authorImg/xunzi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7375"),
+    "auth_name": "许浑",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_ff17134b62ff.aspx",
+    Intro: "许浑（约791～约858），字用晦（一作仲晦），唐代诗人，润州丹阳（今江苏丹阳）人。晚唐最具影响力的诗人之一，其一生不作古诗，专攻律体；题材以怀古、田园诗为佳，艺术则以偶对整密、诗律纯熟为特色。唯诗中多描写水、雨之景，后人拟之与诗圣杜甫齐名，并以“许浑千首诗，杜甫一生愁”评价之。成年后移家京口(今江苏镇江)丁卯涧，以丁卯名其诗集，后人因称“许丁卯”。许诗误入杜牧集者甚多。代表作有《咸阳城东楼》。",
+    Picture: "https://song.gushiwen.cn/authorImg/xuhun.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7376"),
+    "auth_name": "姜夔",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_f8b6b7d9fab9.aspx",
+    Intro: "姜夔[kuí]（1154年—1221年），字尧章，号白石道人，汉族，饶州德兴人。南宋文学家、音乐家。其作品素以空灵含蓄著称，姜夔对诗词、散文、书法、音乐，无不精善，是继苏轼之后又一难得的艺术全才。有《白石道人诗集》《白石道人歌曲》《续书谱》《绛帖平》等书传世。",
+    Picture: "https://song.gushiwen.cn/authorImg/jiangkui.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7377"),
+    "auth_name": "范成大",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_c1faf0e6cdcb.aspx",
+    Intro: "范成大（1126-1193），字至能，号称石湖居士。汉族，平江吴县（今江苏苏州）人。南宋诗人。谥文穆。从江西派入手，后学习中、晚唐诗，继承了白居易、王建、张籍等诗人新乐府的现实主义精神，终于自成一家。风格平易浅显、清新妩媚。诗题材广泛，以反映农村社会生活内容的作品成就最高。他与杨万里、陆游、尤袤合称南宋“中兴四大诗人”。",
+    Picture: "https://song.gushiwen.cn/authorImg/fanchengda.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7378"),
+    "auth_name": "司马相如",
+    dynasty: "两汉",
+    link: "https://so.gushiwen.cn/authorv_a84be3cddeda.aspx",
+    Intro: "司马相如（约公元前179年—前118年），字长卿，汉族，巴郡安汉县（今四川省南充市蓬安县）人，一说蜀郡（今四川成都）人。西汉大辞赋家。司马相如是中国文化史文学史上杰出的代表，是西汉盛世汉武帝时期伟大的文学家、杰出的政治家。景帝时为武骑常侍，因病免。工辞赋，其代表作品为《子虚赋》。作品词藻富丽，结构宏大，使他成为汉赋的代表作家，后人称之为赋圣和“辞宗”。他与卓文君的爱情故事也广为流传。鲁迅的《汉文学史纲要》中还把二人放在一个专节里加以评述，指出：“武帝时文人，赋莫若司马相如，文莫若司马迁。”",
+    Picture: "https://song.gushiwen.cn/authorImg/simaxiangru.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7379"),
+    "auth_name": "张若虚",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_787d4a1969b8.aspx",
+    Intro: "张若虚（约660—约720），唐代诗人。扬州（今属江苏）人。曾任兖州兵曹。生卒年、字号均不详。事迹略见于《旧唐书·贺知章传》。中宗神龙（705～707）中，与贺知章、贺朝、万齐融、邢巨、包融俱以文词俊秀驰名于京都，与贺知章、张旭、包融并称“吴中四士”。玄宗开元时尚在世。张若虚的诗仅存二首于《全唐诗》中。其中《春江花月夜》是一篇脍炙人口的名作，它沿用陈隋乐府旧题，抒写真挚动人的离情别绪及富有哲理意味的人生感慨，语言清新优美，韵律宛转悠扬，洗去了宫体诗的浓脂艳粉，给人以澄澈空明、清丽自然的感觉。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangruoxu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed737a"),
+    "auth_name": "王建",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_ae8538b4e917.aspx",
+    Intro: "王建（768年—835年），字仲初，颍川（今河南许昌）人，唐朝诗人。出身寒微，一生潦倒。曾一度从军，约46岁始入仕，曾任昭应县丞、太常寺丞等职。后出为陕州司马，世称王司马。与张籍友善，乐府与张齐名，世称张王乐府。",
+    Picture: "https://song.gushiwen.cn/authorImg/wangjian.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed737b"),
+    "auth_name": "李耳",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_f59c39d8cecd.aspx",
+    Intro: "老子，姓李名耳，字聃，一字伯阳，或曰谥伯阳，春秋时期人，生卒年不详，籍贯也多有争议。中国古代思想家、哲学家、文学家和史学家，道家学派创始人和主要代表人物，与庄子并称“老庄”。在道教中被尊为始祖，称“太上老君”。在唐朝，被追认为李姓始祖。曾被奉为世界文化名人，世界百位历史名人之一。老子传世作品《道德经》（又称《老子》），是全球文字出版发行量最大的著作之一。　",
+    Picture: "https://song.gushiwen.cn/authorImg/lier.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed737c"),
+    "auth_name": "贾谊",
+    dynasty: "两汉",
+    link: "https://so.gushiwen.cn/authorv_15d08afc7439.aspx",
+    Intro: "贾谊（前200～前168），汉族，洛阳（今河南省洛阳市东）人，字太傅。西汉初年著名的政论家、文学家。18岁即有才名，年轻时由河南郡守吴公推荐，20余岁被文帝召为博士。不到一年被破格提为太中大夫。但是在23岁时，因遭群臣忌恨，被贬为长沙王的太傅。后被召回长安，为梁怀王太傅。梁怀王坠马而死后，贾谊深自歉疚，直至33岁忧伤而死。其著作主要有散文和辞赋两类。散文如《过秦论》、《论积贮疏》、《陈政事疏》等都很有名；辞赋以《吊屈原赋》、《鵩鸟赋》最著名。",
+    Picture: "https://song.gushiwen.cn/authorImg/jiayi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed737d"),
+    "auth_name": "王之涣",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_637fa1f1b67a.aspx",
+    Intro: "王之涣（688年—742年），是盛唐时期的著名诗人，字季凌，汉族，绛州（今山西新绛县）人。豪放不羁，常击剑悲歌，其诗多被当时乐工制曲歌唱。名动一时，他常与高适、王昌龄等相唱和，以善于描写边塞风光著称。其代表作有《登鹳雀楼》、《凉州词》等。“白日依山尽，黄河入海流。欲穷千里目，更上一层楼”，更是千古绝唱。",
+    Picture: "https://song.gushiwen.cn/authorImg/wangzhihuan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed737e"),
+    "auth_name": "鱼玄机",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_65350a0ae0a0.aspx",
+    Intro: "鱼玄机，女，晚唐诗人，长安（今陕西西安）人。初名鱼幼微，字蕙兰。咸通（唐懿宗年号，844—874）中为补阙李亿妾，以李妻不能容，进长安咸宜观出家为女道士。后被京兆尹温璋以打死婢女之罪名处死。鱼玄机性聪慧，有才思，好读书，尤工诗。与李冶、薛涛、刘采春并称唐代四大女诗人。鱼玄机其诗作现存五十首，收于《全唐诗》。有《鱼玄机集》一卷。其事迹见《唐才子传》等书。",
+    Picture: "https://song.gushiwen.cn/authorImg/yuxuanji.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed737f"),
+    "auth_name": "龚自珍",
+    dynasty: "清代",
+    link: "https://so.gushiwen.cn/authorv_e0c140ccdde2.aspx",
+    Intro: "龚自珍（1792年8月22日－1841年9月26日），字璱人，号定盦（一作定庵）。汉族，浙江临安（今杭州）人。晚年居住昆山羽琌山馆，又号羽琌山民。清代思想家、诗人、文学家和改良主义的先驱者。龚自珍曾任内阁中书、宗人府主事和礼部主事等官职。主张革除弊政，抵制外国侵略，曾全力支持林则徐禁除鸦片。48岁辞官南归，次年卒于江苏丹阳云阳书院。他的诗文主张“更法”、“改图”，揭露清统治者的腐朽，洋溢着爱国热情，被柳亚子誉为“三百年来第一流”。著有《定盦文集》，留存文章300余篇，诗词近800首，今人辑为《龚自珍全集》。著名诗作《己亥杂诗》共315首。多咏怀和讽喻之作。",
+    Picture: "https://song.gushiwen.cn/authorImg/gongzizhen.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7380"),
+    "auth_name": "贺铸",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_389bc382deaf.aspx",
+    Intro: "贺铸(1052～1125) 北宋词人。字方回，号庆湖遗老。汉族，卫州（今河南卫辉）人。宋太祖贺皇后族孙，所娶亦宗室之女。自称远祖本居山阴，是唐贺知章后裔，以知章居庆湖（即镜湖），故自号庆湖遗老。",
+    Picture: "https://song.gushiwen.cn/authorImg/hezhu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7381"),
+    "auth_name": "骆宾王",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_b8f9680ff0fe.aspx",
+    Intro: "骆宾王（约619—约687年）字观光，汉族，婺州义乌人（今浙江义乌）。唐初诗人，与王勃、杨炯、卢照邻合称“初唐四杰”。又与富嘉谟并称“富骆”。高宗永徽中为道王李元庆府属，历武功、长安主簿，仪凤三年，入为侍御史，因事下狱，次年遇赦，调露二年除临海丞，不得志，辞官。有集。骆宾王于武则天光宅元年，为起兵扬州反武则天的徐敬业作《代李敬业传檄天下文》，敬业败，亡命不知所之，或云被杀，或云为僧。",
+    Picture: "https://song.gushiwen.cn/authorImg/luobinwang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7382"),
+    "auth_name": "皎然",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_179f3ae96ec4.aspx",
+    Intro: "僧皎然（730-799），俗姓谢，字清昼，湖州（浙江吴兴）人，是中国山水诗创始人谢灵运的十世孙，唐代著名诗人、茶僧，吴兴杼山妙喜寺主持，在文学、佛学、茶学等方面颇有造诣。与颜真卿、灵澈、陆羽等和诗，现存皎然470首诗。多为送别酬答之作。情调闲适，语言简淡。皎然的诗歌理论著作《诗式》。",
+    Picture: "https://song.gushiwen.cn/authorImg/jiaoran.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7383"),
+    "auth_name": "郑燮",
+    dynasty: "清代",
+    link: "https://so.gushiwen.cn/authorv_a4c70d8d6e0e.aspx",
+    Intro: "郑板桥（1693—1765）清代官吏、书画家、文学家。字克柔，汉族，江苏兴化人。一生主要客居扬州，以卖画为生。“扬州八怪”之一。其诗、书、画均旷世独立，世称“三绝”，擅画兰、竹、石、松、菊等植物，其中画竹已五十余年，成就最为突出。著有《板桥全集》。康熙秀才、雍正举人、乾隆元年进士。中进士后曾历官河南范县、山东潍县知县，有惠政。以请臻饥民忤大吏，乞疾归。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhengxie.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7384"),
+    "auth_name": "贺知章",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_79e0e9d1f260.aspx",
+    Intro: "贺知章(659—744)，字季真，号四明狂客，汉族，唐越州（今绍兴）永兴(今浙江萧山)人，贺知章诗文以绝句见长，除祭神乐章、应制诗外，其写景、抒怀之作风格独特，清新潇洒，著名的《咏柳》、《回乡偶书》两首脍炙人口，千古传诵，今尚存录入《全唐诗》共19首。",
+    Picture: "https://song.gushiwen.cn/authorImg/hezhizhang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7385"),
+    "auth_name": "张祜",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_2d4282baeca8.aspx",
+    Intro: "张祜(hù)（约785年—849年?）， 字承吉，唐代清河（今邢台市清河县）人，诗人。家世显赫，被人称作张公子，有“海内名士”之誉。早年曾寓居姑苏。长庆中，令狐楚表荐之，不报。辟诸侯府，为元稹排挤，遂至淮南寓居，爱丹阳曲阿地，隐居以终。张祜的一生，在诗歌创作上取得了卓越成就。“故国三千里，深宫二十年”，张祜以是得名，《全唐诗》收录其349首诗歌。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhanghu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7386"),
+    "auth_name": "张岱",
+    dynasty: "明代",
+    link: "https://so.gushiwen.cn/authorv_cce8f82d981b.aspx",
+    Intro: "张岱（1597年10月5日－1689年？）一名维城，字宗子，又字石公，号陶庵、陶庵老人、蝶庵、古剑老人、古剑陶庵、古剑陶庵老人、古剑蝶庵老人，晚年号六休居士，浙江山阴（今浙江绍兴）人，祖籍四川绵竹（故自称“蜀人”） ，明清之际史学家、文学家。其最擅长散文，著有《琅嬛文集》《陶庵梦忆》《西湖梦寻》《三不朽图赞》《夜航船》等绝代文学名著。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangdai.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7387"),
+    "auth_name": "陆龟蒙",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_46b894036ae3.aspx",
+    Intro: "陆龟蒙（？～公元881年），唐代农学家、文学家，字鲁望，别号天随子、江湖散人、甫里先生，江苏吴县人。曾任湖州、苏州刺史幕僚，后隐居松江甫里，编著有《甫里先生文集》等。 他的小品文主要收在《笠泽丛书》中，现实针对性强，议论也颇精切，如《野庙碑》、《记稻鼠》等。陆龟蒙与皮日休交友，世称“皮陆”，诗以写景咏物为多。",
+    Picture: "https://song.gushiwen.cn/authorImg/luguimeng.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7388"),
+    "auth_name": "吴文英",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_f57e6789865a.aspx",
+    Intro: "吴文英（约1200～1260），字君特，号梦窗，晚年又号觉翁，四明（今浙江宁波）人。原出翁姓，后出嗣吴氏。与贾似道友善。有《梦窗词集》一部，存词三百四十余首，分四卷本与一卷本。其词作数量丰沃，风格雅致，多酬答、伤时与忆悼之作，号“词中李商隐”。而后世品评却甚有争论。",
+    Picture: "https://song.gushiwen.cn/authorImg/wuwenying.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7389"),
+    "auth_name": "贯休",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_a6acb3e3e0dd.aspx",
+    Intro: "贯休（832～912），俗姓姜，字德隐，婺州兰溪（今浙江兰溪市游埠镇仰天田）人。唐末五代前蜀画僧、诗僧。七岁出家和安寺，日读经书千字，过目不忘。唐天复间入蜀，被前蜀主王建封为“禅月大师”，赐以紫衣。贯休能诗，诗名高节，宇内咸知。尝有句云：“一瓶一钵垂垂老，万水千山得得来，”时称“得得和尚”。有《禅月集》存世。亦擅绘画，尤其所画罗汉，更是状貌古野，绝俗超群，笔法坚劲，人物粗眉大眼，丰颊高鼻，形象夸张，所谓“梵相”。在中国绘画史上，有着很高的声誉。存世《十六罗汉图》，为其代表作。",
+    Picture: "https://song.gushiwen.cn/authorImg/guanxiu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed738a"),
+    "auth_name": "韩非",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_932e5d797574.aspx",
+    Intro: "韩非子生于周赧王三十五年（约公元前281年），卒于秦王政十四年（公元前233年），韩非为韩国公子（即国君之子），汉族，战国末期韩国人(今河南省新郑）。师从荀子，是中国古代著名的哲学家、思想家，政论家和散文家，法家思想的集大成者，后世称“韩子”或“韩非子”，中国古代著名法家思想的代表人物。",
+    Picture: "https://song.gushiwen.cn/authorImg/hanfe.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed738b"),
+    "auth_name": "卢纶",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_782b7ec7e8ae.aspx",
+    Intro: "卢纶（739年—799年），字允言，河中蒲州（今山西永济县）人。唐代诗人，大历十才子之一。唐玄宗天宝末年举进士，遇乱不第；唐代宗朝又应举， 屡试不第。大历六年，经宰相元载举荐，授阌乡尉；后由宰相王缙荐为集贤学士，秘书省校书郎，升监察御史。出为陕州户曹、河南密县令。之后元载、王缙获罪，遭到牵连。唐德宗朝，复为昭应县令，出任河中元帅浑瑊府判官，官至检校户部郎中。不久去世。著有《卢户部诗集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/lulun.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed738c"),
+    "auth_name": "元好问",
+    dynasty: "金朝",
+    link: "https://so.gushiwen.cn/authorv_87bdc6fea2cb.aspx",
+    Intro: "元好（hào）问（1190年8月10日—1257年10月12日），字裕之，号遗山，世称遗山先生。太原秀容（今山西忻州）人。金末至大蒙古国时期著名文学家、历史学家。元好问是宋金对峙时期北方文学的主要代表、文坛盟主，又是金元之际在文学上承前启后的桥梁，被尊为“北方文雄”、“一代文宗”。他擅作诗、文、词、曲。其中以诗作成就最高，其“丧乱诗”尤为有名；其词为金代一朝之冠，可与两宋名家媲美；其散曲虽传世不多，但当时影响很大，有倡导之功。有《元遗山先生全集》、《中州集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/yuanhaowen.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed738d"),
+    "auth_name": "杜荀鹤",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_3fade50333c4.aspx",
+    Intro: "杜荀鹤(846～904)，唐代诗人。字彦之，号九华山人。汉族，池州石埭（今安徽石台）人。大顺进士，以诗名，自成一家，尤长于宫词。大顺二年，第一人擢第，复还旧山。宣州田頵遣至汴通好，朱全忠厚遇之，表授翰林学士、主客员外郎、知制诰。恃势侮易缙绅，众怒，欲杀之而未及。天祐初卒。自序其文为《唐风集》十卷，今编诗三卷。事迹见孙光宪《北梦琐言》、何光远《鉴诫录》、《旧五代史·梁书》本传、《唐诗纪事》及《唐才子传》。",
+    Picture: "https://song.gushiwen.cn/authorImg/duxunhe.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed738e"),
+    "auth_name": "周敦颐",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_b9737a950f1f.aspx",
+    Intro: "周敦颐（1017年6月1日—1073年7月14日），又名周元皓，原名周敦实，字茂叔，谥号元公，道州营道楼田保（今湖南省道县）人，世称濂溪先生。是北宋五子之一，宋朝儒家理学思想的开山鼻祖，文学家、哲学家。著有《周元公集》《爱莲说》《太极图说》《通书》（后人整编进《周元公集》）。周敦颐所提出的无极、太极、阴阳、五行、动静、主静、至诚、无欲、顺化等理学基本概念，为后世的理学家反复讨论和发挥，构成理学范畴体系中的重要内容。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhoudunyi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed738f"),
+    "auth_name": "谢灵运",
+    dynasty: "南北朝",
+    link: "https://so.gushiwen.cn/authorv_8a87a861d840.aspx",
+    Intro: "谢灵运（385年－433年），东晋陈郡阳夏（今河南太康）人，出生在会稽始宁（今浙江上虞），原为陈郡谢氏士族。东晋名将谢玄之孙，小名“客”，人称谢客。又以袭封康乐公，称谢康公、谢康乐。著名山水诗人，主要创作活动在刘宋时代，中国文学史上山水诗派的开创者。由谢灵运始，山水诗乃成中国文学史上的一大流派，最著名的是《山居赋》，也是见诸史册的第一位大旅行家。谢灵运还兼通史学，工于书法，翻译佛经，曾奉诏撰《晋书》。《隋书·经籍志》、《晋书》录有《谢灵运集》等14种。",
+    Picture: "https://song.gushiwen.cn/authorImg/xielingyunn.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7390"),
+    "auth_name": "王羲之",
+    dynasty: "魏晋",
+    link: "https://so.gushiwen.cn/authorv_454d6e3e96ce.aspx",
+    Intro: "王羲之（303年—361年，一作321年—379年），字逸少，汉族，东晋时期著名书法家，有“书圣”之称。祖籍琅琊（今属山东临沂），后迁无锡，晚年隐居剡县金庭（今属浙江）。历任秘书郞、宁远将军、江州刺史。后为会稽内史，领右将军。其书法兼善隶、草、楷、行各体，精研体势，心摹手追，广采众长，备精诸体，冶于一炉，摆脱了汉魏笔风，自成一家，影响深远。风格平和自然，笔势委婉含蓄，遒美健秀。代表作《兰亭序》被誉为“天下第一行书”。在书法史上，他与其子王献之合称为“二王”。",
+    Picture: "https://song.gushiwen.cn/authorImg/wangxizhi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7391"),
+    "auth_name": "于谦",
+    dynasty: "明代",
+    link: "https://so.gushiwen.cn/authorv_f3054465947d.aspx",
+    Intro: "于谦（1398年5月13日－1457年2月16日），字廷益，号节庵，官至少保，世称于少保。汉族，明朝浙江杭州钱塘县人。因参与平定汉王朱高煦谋反有功，得到明宣宗器重，担任明朝山西河南巡抚。明英宗时期，因得罪王振下狱，后释放，起为兵部侍郎。土木堡之变后英宗被俘，郕王朱祁钰监国，擢兵部尚书。于谦力排南迁之议，决策守京师，与诸大臣请郕王即位。瓦剌兵逼京师，督战，击退之。论功加封少保，总督军务，终迫也先遣使议和，使英宗得归。天顺元年因“谋逆”罪被冤杀。谥曰忠肃。有《于忠肃集》。于谦与岳飞、张煌言并称“西湖三杰”。",
+    Picture: "https://song.gushiwen.cn/authorImg/yuqian.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7392"),
+    "auth_name": "朱敦儒",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_d82bfa645313.aspx",
+    Intro: "朱敦儒 （1081－1159），字希真，洛阳人。历兵部郎中、临安府通判、秘书郎、都官员外郎、两浙东路提点刑狱，致仕，居嘉禾。绍兴二十九年（1159）卒。有词三卷，名《樵歌》。朱敦儒获得“词俊”之名，与“诗俊”陈与义等并称为“洛中八俊” （楼钥《跋朱岩壑鹤赋及送闾丘使君诗》）",
+    Picture: "https://song.gushiwen.cn/authorImg/zhudunru.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7393"),
+    "auth_name": "仓央嘉措",
+    dynasty: "清代",
+    link: "https://so.gushiwen.cn/authorv_0478318c4998.aspx",
+    Intro: "仓央嘉措（藏文：ཚངས་དབྱངས་རྒྱ་མཚོ།；Tshangs-dbyangs-rgya-mtsho1683.03.01－1706.11.15），门巴族，六世达赖喇嘛，法名罗桑仁钦仓央嘉措，西藏历史上著名的诗人、政治人物。康熙三十六年（1697年）被当时的西藏摄政王第巴·桑结嘉措认定为五世达赖的转世灵童，同年在桑结嘉措的主持下在布达拉宫举行了坐床典礼。康熙四十四年（1705年）被废，据传在康熙四十五年（1706年）的押解途中圆寂。仓央嘉措是西藏最具代表的民歌诗人，写了很多细腻真挚的诗歌，其中最为经典的是拉萨藏文木刻版《仓央嘉措情歌》。",
+    Picture: "https://song.gushiwen.cn/authorImg/cangyangjiacuo.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7394"),
+    "auth_name": "宋玉",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_c364b4db5ff7.aspx",
+    Intro: "宋玉，又名子渊，战国时鄢（今襄阳宜城）人， 楚国辞赋作家。生于屈原之后，曾事楚顷襄王。好辞赋，为屈原之后辞赋家，与唐勒、景差齐名。相传所作辞赋甚多，《汉书·卷三十·艺文志第十》录有赋16篇，今多亡佚。流传作品有《九辨》、《风赋》、《高唐赋》、《登徒子好色赋》等，但后3篇有人怀疑不是他所作。所谓“下里巴人”、“阳春白雪”、“曲高和寡”的典故皆他而来。",
+    Picture: "https://song.gushiwen.cn/authorImg/songyu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7395"),
+    "auth_name": "袁枚",
+    dynasty: "清代",
+    link: "https://so.gushiwen.cn/authorv_74546b0b8005.aspx",
+    Intro: "袁枚（1716－1797）清代诗人、散文家。字子才，号简斋，晚年自号仓山居士、随园主人、随园老人。汉族，钱塘（今浙江杭州）人。乾隆四年进士，历任溧水、江宁等县知县，有政绩，四十岁即告归。在江宁小仓山下筑筑随园，吟咏其中。广收诗弟子，女弟子尤众。袁枚是乾嘉时期代表诗人之一，与赵翼、蒋士铨合称“乾隆三大家”。",
+    Picture: "https://song.gushiwen.cn/authorImg/yuanmei.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7396"),
+    "auth_name": "郦道元",
+    dynasty: "南北朝",
+    link: "https://so.gushiwen.cn/authorv_4b13c1698a34.aspx",
+    Intro: "郦道元（约470—527），字善长。汉族，范阳涿州（今河北涿州）人。北朝北魏地理学家、散文家。仕途坎坷，终未能尽其才。他博览奇书，幼时曾随父亲到山东访求水道，后又游历秦岭、淮河以北和长城以南广大地区，考察河道沟渠，搜集有关的风土民情、历史故事、神话传说，撰《水经注》四十卷。文笔隽永，描写生动，既是一部内容丰富多彩的地理著作，也是一部优美的山水散文汇集。可称为我国游记文学的开创者，对后世游记散文的发展影响颇大。另著《本志》十三篇及《七聘》等文，已佚。",
+    Picture: "https://song.gushiwen.cn/authorImg/lidaoyuan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7397"),
+    "auth_name": "白朴",
+    dynasty: "元代",
+    link: "https://so.gushiwen.cn/authorv_273c4b7b5807.aspx",
+    Intro: "白朴（1226—约1306） 原名恒，字仁甫，后改名朴，字太素，号兰谷。汉族，祖籍隩州（今山西河曲附近），后徙居真定（今河北正定县），晚岁寓居金陵（今南京市），终身未仕。他是元代著名的文学家、曲作家、杂剧家，与关汉卿、马致远、郑光祖合称为元曲四大家。代表作主要有《唐明皇秋夜梧桐雨》、《裴少俊墙头马上》、《董月英花月东墙记》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/baipu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7398"),
+    "auth_name": "韩偓",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_ce61301b9cf7.aspx",
+    Intro: "韩偓（公元842年～公元923年）。中国唐代诗人。乳名冬郎，字致光，号致尧，晚年又号玉山樵人。陕西万年县（今樊川）人。自幼聪明好学，10岁时，曾即席赋诗送其姨夫李商隐，令满座皆惊，李商隐称赞其诗是“雏凤清于老凤声”。龙纪元年(889年)，韩偓中进士，初在河中镇节度使幕府任职，后入朝历任左拾遗、左谏议大夫、度支副使、翰林学士。",
+    Picture: "https://song.gushiwen.cn/authorImg/hanwo.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7399"),
+    "auth_name": "冯延巳",
+    dynasty: "五代",
+    link: "https://so.gushiwen.cn/authorv_3e4eac5829e0.aspx",
+    Intro: "冯延巳 （903--960）又名延嗣，字正中，五代广陵（今江苏省扬州市）人。在南唐做过宰相，生活过得很优裕、舒适。他的词多写闲情逸致辞，文人的气息很浓，对北宋初期的词人有比较大的影响。宋初《钓矶立谈》评其“学问渊博，文章颖发，辩说纵横”，其词集名《阳春集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/fengyansi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed739a"),
+    "auth_name": "蒋捷",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_5456aa6d3e19.aspx",
+    Intro: "蒋捷（约1245～1305后），字胜欲，号竹山，南宋词人， 宋末元初阳羡（今江苏宜兴）人。先世为宜兴大族，南宋咸淳十年（1274）进士。南宋覆灭，深怀亡国之痛，隐居不仕，人称“竹山先生”、“樱桃进士”，其气节为时人所重。长于词，与周密、王沂孙、张炎并称“宋末四大家”。其词多抒发故国之思、山河之恸 、风格多样，而以悲凉清俊、萧寥疏爽为主。尤以造语奇巧之作，在宋季词坛上独标一格，有《竹山词》1卷，收入毛晋《宋六十名家词》本、《彊村丛书》本，又《竹山词》2卷，收入涉园景宋元明词续刊本。",
+    Picture: "没"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed739b"),
+    "auth_name": "曾国藩",
+    dynasty: "清代",
+    link: "https://so.gushiwen.cn/authorv_c604082cdd76.aspx",
+    Intro: "曾国藩（1811年11月26日－1872年3月12日），初名子城，字伯函，号涤生，谥文正，汉族，出生于湖南长沙府湘乡县杨树坪（现属湖南省娄底市双峰县荷叶镇）。晚清重臣，湘军的创立者和统帅。清朝战略家、政治家，晚清散文“湘乡派”创立人。晚清“中兴四大名臣”之一，官至两江总督、直隶总督、武英殿大学士，封一等毅勇侯，谥曰文正。",
+    Picture: "https://song.gushiwen.cn/authorImg/zengguofan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed739c"),
+    "auth_name": "姚合",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_61eacce8c314.aspx",
+    Intro: "姚合，陕州硖石人。生卒年均不详，约唐文宗太和中前后在世。以诗名。登元和十一年（公元八一六年）进士第。初授武功主簿，人因称为姚武功。调富平、万年尉。宝历中，（公元八二六年左右）历监察御史，户部员外郎。出任荆、杭二州刺史。后为给事中，陕、虢观察使。与马戴、费冠卿、殷尧藩、张籍游，李频师事之。诗与贾岛齐名，号称“姚、贾”。仕终秘书监。合著有诗集十卷，《新唐书艺文志》及选王维、祖咏等十八人诗，为极玄集一卷，又摭古人诗联，叙其措意，各有体要，撰诗例一卷，（均《唐才子传》）并传于世。",
+    Picture: "https://song.gushiwen.cn/authorImg/yaohe.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed739d"),
+    "auth_name": "崔颢",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_9ff65fca16cc.aspx",
+    Intro: "崔颢(hào)（704—754），汴州（今河南开封市）人，唐代诗人。唐玄宗开元十一年（公元723年）进士，官至太仆寺丞，天宝中为司勋员外郎。最为人称道的是他那首《黄鹤楼》，据说李白为之搁笔，曾有“眼前有景道不得，崔颢题诗在上头”的赞叹。《全唐诗》收录诗四十二首。他秉性耿直，才思敏捷，其作品激昂豪放，气势宏伟，著有《崔颢集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/cuihao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed739e"),
+    "auth_name": "钱起",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_5219605011ab.aspx",
+    Intro: "钱起（722？—780年），字仲文，汉族，吴兴（今浙江湖州市）人，唐代诗人。早年数次赴试落第，唐天宝十年（751年）进士，大书法家怀素和尚之叔。初为秘书省校书郎、蓝田县尉，后任司勋员外郎、考功郎中、翰林学士等。曾任考功郎中，故世称“钱考功”。代宗大历中为翰林学士。他是大历十才子之一，也是其中杰出者，被誉为“大历十才子之冠”。又与郎士元齐名，称“钱郎”，当时称为“前有沈宋，后有钱郎。”",
+    Picture: "https://song.gushiwen.cn/authorImg/qianqi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed739f"),
+    "auth_name": "曹丕",
+    dynasty: "魏晋",
+    link: "https://so.gushiwen.cn/authorv_8a732b57b0ac.aspx",
+    Intro: "曹魏高祖文皇帝曹丕（187年冬－226年6月29日），字子桓，三国时期著名的政治家、文学家，曹魏的开国皇帝，公元220－226年在位。他在位期间，平定边患。击退鲜卑，和匈奴、氐、羌等外夷修好，恢复汉朝在西域的设置。除军政以外，曹丕自幼好文学，于诗、赋、文学皆有成就，尤擅长于五言诗，与其父曹操和弟曹植，并称三曹，今存《魏文帝集》二卷。另外，曹丕著有《典论》，当中的《论文》是中国文学史上第一部有系统的文学批评专论作品。去世后庙号高祖（《资治通鉴》作世祖），谥为文皇帝，葬于首阳陵。",
+    Picture: "https://song.gushiwen.cn/authorImg/caopi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73a0"),
+    "auth_name": "李峤",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_f5e3721e014f.aspx",
+    Intro: "李峤(644～713) ，唐代诗人。字巨山。赵州赞皇（今属河北）人。李峤对唐代律诗和歌行的发展有一定的作用与影响。他前与王勃、杨炯相接，又和杜审言、崔融、苏味道并称“文章四友”。",
+    Picture: "https://song.gushiwen.cn/authorImg/liqiao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73a1"),
+    "auth_name": "杨慎",
+    dynasty: "明代",
+    link: "https://so.gushiwen.cn/authorv_58f3c71f76d8.aspx",
+    Intro: "杨慎（1488～1559）明代文学家，明代三大才子之首。字用修，号升庵，后因流放滇南，故自称博南山人、金马碧鸡老兵。杨廷和之子，汉族，四川新都（今成都市新都区）人，祖籍庐陵。正德六年状元，官翰林院修撰，豫修武宗实录。武宗微行出居庸关，上疏抗谏。世宗继位，任经筵讲官。嘉靖三年，因“大礼议”受廷杖，谪戍终老于云南永昌卫。终明一世记诵之博，著述之富，慎可推为第一。其诗虽不专主盛唐，仍有拟右倾向。贬谪以后，特多感愤。又能文、词及散曲，论古考证之作范围颇广。著作达百余种。后人辑为《升庵集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/yangshen.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73a2"),
+    "auth_name": "皮日休",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_ed13dc2f731c.aspx",
+    Intro: "皮日休，字袭美，一字逸少，生于公元834至839年间，卒于公元902年以后。曾居住在鹿门山，自号鹿门子，又号间气布衣、醉吟先生。晚唐文学家、散文家，与陆龟蒙齐名，世称“皮陆”。今湖北天门人（《北梦琐言》），汉族。咸通八年（867）进士及第，在唐时历任苏州军事判官（《吴越备史》）、著作佐郎、太常博士、毗陵副使。后参加黄巢起义，或言“陷巢贼中”（《唐才子传》），任翰林学士，起义失败后不知所踪。诗文兼有奇朴二态，且多为同情民间疾苦之作。《新唐书·艺文志》录有《皮日休集》、《皮子》、《皮氏鹿门家钞》多部。",
+    Picture: "https://song.gushiwen.cn/authorImg/pirixiu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73a3"),
+    "auth_name": "张先",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_dcf7e0284e0d.aspx",
+    Intro: "张先（990－1078），字子野，乌程（今浙江湖州吴兴）人。北宋时期著名的词人，曾任安陆县的知县，因此人称“张安陆”。天圣八年进士，官至尚书都官郎中。晚年退居湖杭之间。曾与梅尧臣、欧阳修、苏轼等游。善作慢词，与柳永齐名，造语工巧，曾因三处善用“影”字，世称张三影。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangxian.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73a4"),
+    "auth_name": "张孝祥",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_83fa70cf5a10.aspx",
+    Intro: "张孝祥（1132年—1170年），字安国，别号于湖居士，历阳乌江（今安徽和县乌江镇）人，卜居明州鄞县（今浙江宁波）。南宋著名词人，书法家。唐代诗人张籍的七世孙。张孝祥善诗文，尤工于词，其风格宏伟豪放，为“豪放派”代表作家之一。有《于湖居士文集》《于湖词》等传世。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangxiaoxiang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73a5"),
+    "auth_name": "阮籍",
+    dynasty: "魏晋",
+    link: "https://so.gushiwen.cn/authorv_626c0d0c46c9.aspx",
+    Intro: "阮籍(210～263)，三国魏诗人。字嗣宗。陈留（今属河南）尉氏人。竹林七贤之一，是建安七子之一阮瑀的儿子。曾任步兵校尉，世称阮步兵。崇奉老庄之学，政治上则采谨慎避祸的态度。阮籍是“正始之音”的代表，著有《咏怀》、《大人先生传》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/ruanji.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73a6"),
+    "auth_name": "刘义庆",
+    dynasty: "南北朝",
+    link: "https://so.gushiwen.cn/authorv_03097a189759.aspx",
+    Intro: "刘义庆（403年 - 444年），彭城郡彭城县（今江苏省徐州市）人，南朝宋宗室、文学家。宋武帝刘裕的侄子。袭封南郡公，永初元年（420年）封临川王，征为侍中。文帝元嘉时，历仕秘书监、丹阳尹、尚书左仆射、中书令、荆州刺史等。著有《后汉书》、《徐州先贤传》、《江左名士传》、《世说新语》。",
+    Picture: "https://song.gushiwen.cn/authorImg/liuyiqing.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73a7"),
+    "auth_name": "嵇康",
+    dynasty: "魏晋",
+    link: "https://so.gushiwen.cn/authorv_3b9be9277871.aspx",
+    Intro: "嵇康（224－263，一说223－262），字叔夜，汉族，三国时期魏国谯郡铚县（今安徽省宿州市西）人。著名思想家、音乐家、文学家。正始末年与阮籍等竹林名士共倡玄学新风，主张“越名教而任自然”、“审贵贱而通物情”，为“竹林七贤”的精神领袖。曾娶曹操曾孙女，官曹魏中散大夫，世称嵇中散。后因得罪钟会，为其构陷，而被司马昭处死。",
+    Picture: "https://song.gushiwen.cn/authorImg/jingkang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73a8"),
+    "auth_name": "司马光",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_6864013c4ea6.aspx",
+    Intro: "司马光（1019年11月17日－1086年），字君实，号迂叟，陕州夏县（今山西夏县）涑水乡人，《宋史》，《辞海》等明确记载，世称涑水先生。生于河南省信阳市光山县。北宋史学家、文学家。历仕仁宗、英宗、神宗、哲宗四朝，卒赠太师、温国公，谥文正，主持编纂了中国历史上第一部编年体通史《资治通鉴》，为人温良谦恭、刚正不阿，其人格堪称儒学教化下的典范，历来受人景仰。生平著作甚多，主要有史学巨著《资治通鉴》、《温国文正司马公文集》、《稽古录》、《涑水记闻》、《潜虚》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/simaguang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73a9"),
+    "auth_name": "苏洵",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_74553f397a03.aspx",
+    Intro: "苏洵（1009年－1066年），字明允，汉族，眉州眉山（今属四川眉山人）。北宋文学家，与其子苏轼、苏辙合称“三苏”，均被列入“唐宋八大家”。苏洵长于散文，尤擅政论，议论明畅，笔势雄健，有《嘉祐集》传世。",
+    Picture: "https://song.gushiwen.cn/authorImg/suxun.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73aa"),
+    "auth_name": "刘克庄",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_44ca268d5c43.aspx",
+    Intro: "刘克庄(1187～1269) 南宋诗人、词人、诗论家。字潜夫，号后村。福建莆田人。宋末文坛领袖，辛派词人的重要代表，词风豪迈慷慨。在江湖诗人中年寿最长，官位最高，成就也最大。晚年致力于辞赋创作，提出了许多革新理论。",
+    Picture: "https://song.gushiwen.cn/authorImg/liukezhuang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ab"),
+    "auth_name": "戴叔伦",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_af3666b92472.aspx",
+    Intro: "戴叔伦(732—789)，唐代诗人，字幼公（一作次公），润州金坛(今属江苏常州)人。年轻时师事萧颖士。曾任新城令、东阳令、抚州刺史、容管经略使。晚年上表自请为道士。其诗多表现隐逸生活和闲适情调，但《女耕田行》、《屯田词》等篇也反映了人民生活的艰苦。论诗主张“诗家之景，如蓝田日暖，良玉生烟，可望而不可置于眉睫之前”。其诗体裁皆有所涉猎。",
+    Picture: "https://song.gushiwen.cn/authorImg/daishulun.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ac"),
+    "auth_name": "王守仁",
+    dynasty: "明代",
+    link: "https://so.gushiwen.cn/authorv_e8d2cec3ffbe.aspx",
+    Intro: "王守仁（1472年10月31日－1529年1月9日），汉族，幼名云，字伯安，号阳明，封新建伯，谥文成，人称王阳明。明代最著名的思想家、文学家、哲学家和军事家。王阳明不仅是宋明心学的集大成者，一生事功也是赫赫有名，故称之为“真三不朽”其学术思想在中国、日本、朝鲜半岛以及东南亚国家乃至全球都有重要而深远的影响，因此，王守仁（心学集大成者）和孔子（儒学创始人）、孟子（儒学集大成者）、朱熹（理学集大成者）并称为孔、孟、朱、王。",
+    Picture: "https://song.gushiwen.cn/authorImg/wangshouren.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ad"),
+    "auth_name": "苏辙",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_161948f422c0.aspx",
+    Intro: "苏辙（1039—1112年），字子由，汉族，眉州眉山（今属四川）人。嘉祐二年（1057）与其兄苏轼同登进士科。神宗朝，为制置三司条例司属官。因反对王安石变法，出为河南推官。哲宗时，召为秘书省校书郎。元祐元年为右司谏，历官御史中丞、尚书右丞、门下侍郎因事忤哲宗及元丰诸臣，出知汝州，贬筠州、再谪雷州安置，移循州。徽宗立，徙永州、岳州复太中大夫，又降居许州，致仕。自号颍滨遗老。卒，谥文定。唐宋八大家之一，与父洵、兄轼齐名，合称三苏。",
+    Picture: "https://song.gushiwen.cn/authorImg/suzhe.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ae"),
+    "auth_name": "朱淑真",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_1b2c0f1e1dd4.aspx",
+    Intro: "朱淑真（约1135~约1180），号幽栖居士，宋代女词人，亦为唐宋以来留存作品最丰盛的女作家之一。南宋初年时在世，祖籍歙州（治今安徽歙县），《四库全书》中定其为“浙中海宁人”，一说浙江钱塘（今浙江杭州）人。生于仕宦之家。夫为文法小吏，因志趣不合，夫妻不睦，终致其抑郁早逝。又传淑真过世后，父母将其生前文稿付之一炬。其余生平不可考，素无定论。现存《断肠诗集》、《断肠词》传世，为劫后余篇。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhushuzhen.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73af"),
+    "auth_name": "关汉卿",
+    dynasty: "元代",
+    link: "https://so.gushiwen.cn/authorv_5c479a1b49fb.aspx",
+    Intro: "关汉卿（约1220年──1300年），元代杂剧作家。是中国古代戏曲创作的代表人物，“元曲四大家”之首。号已斋（一作一斋）、已斋叟。汉族，解州人（今山西省运城），与马致远、郑光祖、白朴并称为“元曲四大家”。以杂剧的成就最大，一生写了60多种，今存18种，最著名的有《窦娥冤》；关汉卿也写了不少历史剧，如：《单刀会》、《单鞭夺槊》、《西蜀梦》等；散曲今在小令40多首、套数10多首。关汉卿塑造的“我却是蒸不烂、煮不熟、捶不匾、炒不爆、响珰珰一粒铜豌豆”（〈不伏老〉）的形象也广为人称，被誉“曲家圣人”。",
+    Picture: "https://song.gushiwen.cn/authorImg/guanhanqing.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73b0"),
+    "auth_name": "赵嘏",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_3001715a9955.aspx",
+    Intro: "赵嘏（约806年——约853年），字承佑，楚州山阳（今江苏省淮安市淮安区）人，唐代诗人。约生于宪宗元和元年（806年）年轻时四处游历， 大和七年预省试进士下第， 留寓长安多年， 出入豪门以干功名， 其间似曾远去岭表当了几年幕府。 后回江东， 家于润州（今镇江）。会昌四年进士及第，一年后东归。 会昌末或大中初复往长安， 入仕为渭南尉。 约宣宗大中六、七年（852年、853年）卒于任上。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhaogu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73b1"),
+    "auth_name": "卢照邻",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_d0a092a4b65b.aspx",
+    Intro: "卢照邻，初唐诗人。字升之，自号幽忧子，汉族，幽州范阳（治今河北省涿州市）人，其生卒年史无明载，卢照邻望族出身，曾为王府典签，又出任益州新都（今四川成都附近）尉，在文学上，他与王勃、杨炯、骆宾王以文词齐名，世称“王杨卢骆”，号为“初唐四杰”。有7卷本的《卢升之集》、明张燮辑注的《幽忧子集》存世。卢照邻尤工诗歌骈文，以歌行体为佳，不少佳句传颂不绝，如“得成比目何辞死，愿作鸳鸯不羡仙”等，更被后人誉为经典。",
+    Picture: "https://song.gushiwen.cn/authorImg/luzhaolin.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73b2"),
+    "auth_name": "鲍照",
+    dynasty: "南北朝",
+    link: "https://so.gushiwen.cn/authorv_787b2f03c695.aspx",
+    Intro: "鲍照（约415年～466年）南朝宋文学家，与颜延之、谢灵运合称“元嘉三大家”。字明远，汉族，祖籍东海（治所在今山东郯城西南，辖区包括今江苏涟水，久居建康（今南京）。家世贫贱，临海王刘子顼镇荆州时，任前军参军。刘子顼作乱，照为乱兵所杀。他长于乐府诗，其七言诗对唐代诗歌的发展起了很重要的作用。有《鲍参军集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/baozhao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73b3"),
+    "auth_name": "宋之问",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_0410a34d2e7c.aspx",
+    Intro: "宋之问（约656 — 约712），字延清，名少连，汉族，汾州（今山西汾阳市）人，初唐时期的诗人，与沈佺期并称“沈宋”。唐高宗上元二年（675），进士及第，当时掌握实权的是武则天，富有才学的宋之问深得赏识，被召入文学馆，不久出授洛州参军，永隆元年（681）， 与杨炯一起进入崇文馆任学士。与陈子昂、卢藏用、司马承祯、王适、毕构、李白、孟浩然、王维、贺知章称为仙宗十友。",
+    Picture: "https://song.gushiwen.cn/authorImg/songzhiwen.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73b4"),
+    "auth_name": "刘向",
+    dynasty: "两汉",
+    link: "https://so.gushiwen.cn/authorv_4367d1b4dd8c.aspx",
+    Intro: "刘向（前77年—前6年），字子政，原名更生，世称刘中垒，世居汉代楚国彭城，仕于京师长安，祖籍沛郡丰邑（今属江苏徐州），出生于汉昭帝元凤四年（前77年），去世于汉哀帝建平元年（前6年）。刘邦异母弟刘交的后代，刘歆之父。曾奉命领校秘书，所撰《别录》，是我国最早的图书分类目录。三篇，大多亡佚。今存《新序》《说苑》《列女传》《战国策》《列仙传》等书，其著作《五经通义》有清人马国翰辑本。《楚辞》是刘向编订成书，而《山海经》是其与其子刘歆共同编订成书。",
+    Picture: "https://song.gushiwen.cn/authorImg/liuxiang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73b5"),
+    "auth_name": "项羽",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_ea0c2ce3af6d.aspx",
+    Intro: "项羽（公元前232年—公元前202年），名籍，字羽，秦下相（今江苏宿迁）人，他是中国军事思想“勇战派”代表人物，与“谋战派”孙武、韩信等人齐名。秦二世元年（前209年）从叔父项梁在吴中（今江苏苏州）起义，项梁阵亡后他率军渡河救赵王歇，巨鹿之战摧毁章邯的秦军主力。秦亡后称西楚霸王。后与刘邦争夺天下，进行了四年的楚汉战争，公元前202年兵败垓下（今安徽灵壁南），突围至乌江（今安徽和县长江段西）边自刎。项羽至今为止一直被评为中国历史上最为勇猛的著名武将，称之“生当作人杰，死亦为鬼雄”。",
+    Picture: "https://song.gushiwen.cn/authorImg/xiangyu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73b6"),
+    "auth_name": "王冕",
+    dynasty: "元代",
+    link: "https://so.gushiwen.cn/authorv_9a052bcededd.aspx",
+    Intro: "王冕（1310年～1359年），字元章，号煮石山农，亦号食中翁、梅花屋主等，浙江省绍兴市诸暨枫桥人，元朝著名画家、诗人、篆刻家。他出身贫寒，幼年替人放牛，靠自学成才。有《竹斋集》3卷，续集2卷。一生爱好梅花，种梅、咏梅，又攻画梅。所画梅花花密枝繁，生意盎然，劲健有力，对后世影响较大。存世画迹有《南枝春早图》《墨梅图》《三君子图》等。能治印，创用花乳石刻印章，篆法绝妙。《明史》有传。",
+    Picture: "https://song.gushiwen.cn/authorImg/wangmian.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73b7"),
+    "auth_name": "李斯",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_c3783dd37722.aspx",
+    Intro: "李斯（公元前284年—公元前208年），字通古，汝南上蔡（今河南省上蔡县芦冈乡李斯楼村）人 [1-2] 。秦朝著名政治家、文学家和书法家。参与制定法律，统一车轨、文字、度量衡制度。李斯的政治主张的实施，对中国和世界产生了深远的影响，奠定了中国两千多年封建专制的基本格局。秦始皇死后，勾结内官赵高伪造遗诏，迫令公子扶苏自杀，拥立胡亥为二世皇帝，后为赵高所忌。秦二世二年（前208年），父子腰斩于咸阳，夷灭三族 。",
+    Picture: "https://song.gushiwen.cn/authorImg/lisi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73b8"),
+    "auth_name": "李益",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_da2cd14d14b1.aspx",
+    Intro: "李益(约750—约830)， 唐代诗人，字君虞，祖籍凉州姑臧（今甘肃武威市凉州区），后迁河南郑州。大历四年(769)进士，初任郑县尉，久不得升迁，建中四年(783)登书判拔萃科。因仕途失意，后弃官在燕赵一带漫游。以边塞诗作名世，擅长绝句，尤其工于七绝。",
+    Picture: "https://song.gushiwen.cn/authorImg/liyi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73b9"),
+    "auth_name": "郑谷",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_5ca283e748ca.aspx",
+    Intro: "郑谷（约851～910）唐朝末期著名诗人。字守愚，汉族，江西宜春市袁州区人。僖宗时进士，官都官郎中，人称郑都官。又以《鹧鸪诗》得名，人称郑鹧鸪。其诗多写景咏物之作，表现士大夫的闲情逸致。风格清新通俗，但流于浅率。曾与许裳、张乔等唱和往还，号“芳林十哲”。原有集，已散佚，存《云台编》。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhenggu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ba"),
+    "auth_name": "张可久",
+    dynasty: "元代",
+    link: "https://so.gushiwen.cn/authorv_a56fa849ea37.aspx",
+    Intro: "张可久（约1270～1348以后）字小山（一说名伯远，字可久，号小山）（《尧山堂外纪》）；一说名张可久肖像（林晋生作）可久，字伯远，号小山（《词综》）；又一说字仲远，号小山（《四库全书总目提要》），庆元（治所在今浙江宁波鄞县）人，元朝重要散曲家，剧作家，与乔吉并称“双壁”，与张养浩合为“二张”。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangkejiu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73bb"),
+    "auth_name": "张炎",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_c6454212c8da.aspx",
+    Intro: "张炎（1248年－1320年），字叔夏，号玉田，晚年号乐笑翁。祖籍陕西凤翔。六世祖张俊，宋朝著名将领。父张枢，“西湖吟社”重要成员，妙解音律，与著名词人周密相交。张炎是勋贵之后，前半生居于临安，生活优裕，而宋亡以后则家道中落，晚年漂泊落拓。著有《山中白云词》，存词302首。张炎另一重要的贡献在于创作了中国最早的词论专著《词源》，总结整理了宋末雅词一派的主要艺术思想与成就，其中以“清空”，“骚雅”为主要主张。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangyan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73bc"),
+    "auth_name": "蒲松龄",
+    dynasty: "清代",
+    link: "https://so.gushiwen.cn/authorv_ebab180c2bf9.aspx",
+    Intro: "蒲松龄（1640－1715）字留仙，一字剑臣，别号柳泉居士，世称聊斋先生，自称异史氏，现山东省淄博市淄川区洪山镇蒲家庄人。出生于一个逐渐败落的中小地主兼商人家庭。19岁应童子试，接连考取县、府、道三个第一，名震一时。补博士弟子员。以后屡试不第，直至71岁时才成岁贡生。为生活所迫，他除了应同邑人宝应县知县孙蕙之请，为其做幕宾数年之外，主要是在本县西铺村毕际友家做塾师，舌耕笔耘，近40年，直至1709年方撤帐归家。1715年正月病逝，享年76岁。创作出著名的文言文短篇小说集《聊斋志异》。",
+    Picture: "https://song.gushiwen.cn/authorImg/pusongling.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73bd"),
+    "auth_name": "孙武",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_4de4bf6be5b6.aspx",
+    Intro: "孙武（约公元前545－前470），字长卿，汉族，中国春秋时期齐国乐安（今山东省北部）人，是吴国将领。著名军事家、政治家。曾率领吴国军队大破楚国军队，占领了楚的国都郢城，几乎灭亡楚国。其著有巨作《孙子兵法》十三篇，为后世兵法家所推崇，被誉为“兵学圣典”，置于《武经七书》之首，被译为英文、法文、德文、日文，成为国际间最著名的兵学典范之书。今日在山东、江苏苏州等地，尚有祀奉孙武的庙宇，多谓之兵圣庙。　",
+    Picture: "https://song.gushiwen.cn/authorImg/sunwu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73be"),
+    "auth_name": "宋濂",
+    dynasty: "明代",
+    link: "https://so.gushiwen.cn/authorv_00133162b1d0.aspx",
+    Intro: "宋濂（1310—1381）字景濂，号潜溪，别号玄真子、玄真道士、玄真遁叟。汉族，浦江（今浙江浦江县）人，元末明初文学家，曾被明太祖朱元璋誉为“开国文臣之首”，学者称太史公。宋濂与高启、刘基并称为“明初诗文三大家”。他因长孙宋慎牵连胡惟庸党案而被流放茂州，途中病死于夔州。他的代表作品有《送东阳马生序》、《朱元璋奉天讨元北伐檄文》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/songlian.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73bf"),
+    "auth_name": "刘辰翁",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_5452bed2115f.aspx",
+    Intro: "刘辰翁（1233.2.4—1297.2.12），字会孟，别号须溪。庐陵灌溪（今江西省吉安市吉安县梅塘乡小灌村）人。南宋末年著名的爱国诗人。 景定三年（1262）登进士第。他一生一生致力于文学创作和文学批评活动，为后人留下了可贵的丰厚文化遗产，遗著由子刘将孙编为《须溪先生全集》，《宋史·艺文志》著录为一百卷，已佚。",
+    Picture: "https://song.gushiwen.cn/authorImg/liuchenweng.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73c0"),
+    "auth_name": "张养浩",
+    dynasty: "元代",
+    link: "https://so.gushiwen.cn/authorv_e429c2a34cf3.aspx",
+    Intro: "张养浩（1269—1329年），汉族，字希孟，号云庄，山东济南人，元代著名散曲家。诗、文兼擅，而以散曲著称。代表作有《山坡羊·潼关怀古》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangyanghao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73c1"),
+    "auth_name": "权德舆",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_90bafbe61cf7.aspx",
+    Intro: "权德舆（759年－818年）， 字载之。天水略阳（今甘肃秦安东北）人，后徙居润州丹徒（今江苏镇江）。唐朝文学家、宰相，起居舍人权皋之子。权德舆掌诰九年，三知贡举，位历卿相，在贞元、元和年间名重一时。",
+    Picture: "https://song.gushiwen.cn/authorImg/quandeyu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73c2"),
+    "auth_name": "韩翃",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_b8ce6bb93501.aspx",
+    Intro: "韩翃，唐代诗人。字君平，南阳（今河南南阳）人。是“大历十才子”之一。天宝13年（754）考中进士，宝应年间在淄青节度使侯希逸幕府中任从事，后随侯希逸回朝，闲居长安十年。建中年间，因作《寒食》诗被唐德宗所赏识，因而被提拔为中书舍人。韩翃诗笔法轻巧，写景别致，在当时传诵很广。",
+    Picture: "https://song.gushiwen.cn/authorImg/hanli.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73c3"),
+    "auth_name": "皇甫冉",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_e9907dd08d8b.aspx",
+    Intro: "皇甫冉，字茂政。约唐玄宗开元五年（公元717年）出生，卒于唐代宗大历五年（公元770年），润州（今镇江）丹阳人，著名诗人。先世居甘肃泾州。天宝十五年进士。曾官无锡尉，大历初入河南节度使王缙幕，终左拾遗、右补阙。其诗清新飘逸，多飘泊之感。",
+    Picture: "https://song.gushiwen.cn/authorImg/huangfuran.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73c4"),
+    "auth_name": "司空图",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_a4f5884125b1.aspx",
+    Intro: "司空图（837～908）晚唐诗人、诗论家。字表圣，自号知非子，又号耐辱居士。祖籍临淮（今安徽泗县东南），自幼随家迁居河中虞乡（今山西永济）。唐懿宗咸通十年（869年）应试，擢进士上第，天复四年（904年），朱全忠召为礼部尚书，司空图佯装老朽不任事，被放还。后梁开平二年（908年），唐哀帝被弑，他绝食而死，终年七十二岁。司空图成就主要在诗论，《二十四诗品》为不朽之作。《全唐诗》收诗三卷。",
+    Picture: "https://song.gushiwen.cn/authorImg/sikongtu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73c5"),
+    "auth_name": "李世民",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_755ffc8b28b0.aspx",
+    Intro: "唐太宗李世民（599年－649年），唐朝第二位皇帝，在位23年，年号贞观。名字取意“济世安民”，陇西成纪人（今甘肃天水市秦安县）。唐太宗李世民不仅是著名的政治家、军事家，还是一位书法家和诗人。唐太宗开创了著名的贞观之治，被各族人民尊称为天可汗，为后来唐朝全盛时期的开元盛世奠定了重要基础，为后世明君之典范。庙号太宗，谥号文武大圣大广孝皇帝，葬于昭陵。",
+    Picture: "https://song.gushiwen.cn/authorImg/lishimin.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73c6"),
+    "auth_name": "赵长卿",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_61b1f8244d24.aspx",
+    Intro: "赵长卿号仙源居士。江西南丰人。宋代著名词人。 宋宗室，居南丰。生平事迹不详，曾赴漕试，约宋宁宗嘉定末前后在世。从作品中可知他少时孤洁，厌恶王族豪奢的生活，后辞帝京，纵游山水，居于江南，遁世隐居，过着清贫的生活。他同情百姓，友善乡邻，常作词呈乡人。晚年孤寂消沉。《四库提要》云：“长卿恬于仕进，觞咏自娱，随意成吟，多得淡远萧疏之致。”",
+    Picture: "没"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73c7"),
+    "auth_name": "叶绍翁",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_818db43d0d81.aspx",
+    Intro: "叶绍翁，南宋中期诗人，字嗣宗，号靖逸，处州龙泉人。祖籍建安（今福建建瓯），本姓李，后嗣于龙泉(今属浙江丽水)叶氏。生卒年不详。曾任朝廷小官。其学出自叶适，他长期隐居钱塘西湖之滨，与真德秀交往甚密，与葛天民互相酬唱。",
+    Picture: "https://song.gushiwen.cn/authorImg/yeshaoweng.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73c8"),
+    "auth_name": "薛涛",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_1a08221468a4.aspx",
+    Intro: "薛涛（约768～832年），唐代女诗人，字洪度。长安（今陕西西安）人。因父亲薛郧做官而来到蜀地，父亲死后薛涛居于成都。居成都时，成都的最高地方军政长官剑南西川节度使前后更换十一届，大多与薛涛有诗文往来。韦皋任节度使时，拟奏请唐德宗授薛涛以秘书省校书郎官衔，但因格于旧例，未能实现，但人们却称之为“女校书”。曾居浣花溪（今有浣花溪公园）上，制作桃红色小笺写诗，后人仿制，称“薛涛笺”。成都望江楼公园有薛涛墓。",
+    Picture: "https://song.gushiwen.cn/authorImg/xuetao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73c9"),
+    "auth_name": "陈与义",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_8976db397833.aspx",
+    Intro: "陈与义(1090-1138)，字去非，号简斋，汉族，其先祖居京兆，自曾祖陈希亮迁居洛阳，故为宋代河南洛阳人（现在属河南）。他生于宋哲宗元祐五年(1090年)，卒于南宋宋高宗绍兴八年(1138年)。北宋末，南宋初年的杰出诗人，同时也工于填词。其词存于今者虽仅十余首，却别具风格，尤近于苏东坡，语意超绝，笔力横空，疏朗明快，自然浑成，著有《简斋集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/chenyuyi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ca"),
+    "auth_name": "林逋",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_3cf87fbd143c.aspx",
+    Intro: "林逋（967一1028）字君复，汉族，浙江大里黄贤村人（一说杭州钱塘）。幼时刻苦好学，通晓经史百家。书载性孤高自好，喜恬淡，勿趋荣利。长大后，曾漫游江淮间，后隐居杭州西湖，结庐孤山。常驾小舟遍游西湖诸寺庙，与高僧诗友相往还。每逢客至，叫门童子纵鹤放飞，林逋见鹤必棹舟归来。作诗随就随弃，从不留存。1028年（天圣六年）卒。其侄林彰（朝散大夫）、林彬（盈州令）同至杭州，治丧尽礼。宋仁宗赐谥“和靖先生”。",
+    Picture: "https://song.gushiwen.cn/authorImg/linpu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73cb"),
+    "auth_name": "归有光",
+    dynasty: "明代",
+    link: "https://so.gushiwen.cn/authorv_e142a6aeba9d.aspx",
+    Intro: "归有光（1506～1571）明代官员、散文家。字熙甫，又字开甫，别号震川，又号项脊生，汉族，江苏昆山人。嘉靖十九年举人。会试落第八次，徙居嘉定安亭江上，读书谈道，学徒众多，60岁方成进士，历长兴知县、顺德通判、南京太仆寺丞，留掌内阁制敕房，与修《世宗实录》，卒于南京。归有光与唐顺之、王慎中两人均崇尚内容翔实、文字朴实的唐宋古文，并称为嘉靖三大家。由于归有光在散文创作方面的极深造诣，在当时被称为“今之欧阳修”，后人称赞其散文为“明文第一”，著有《震川集》、《三吴水利录》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/guiyouguang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73cc"),
+    "auth_name": "李绅",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_7d5432b45289.aspx",
+    Intro: "李绅（772—846）汉族，亳州（今属安徽）人，生于乌程（今浙江湖州），长于润州无锡（今属江苏）。字公垂。27岁考中进士，补国子助教。与元稹、白居易交游甚密，他一生最闪光的部分在于诗歌，他是在文学史上产生过巨大影响的新乐府运动的参与者。作有《乐府新题》20首，已佚。著有《悯农》诗两首：“锄禾日当午，汗滴禾下土，谁知盘中餐，粒粒皆辛苦。”脍炙人口，妇孺皆知，千古传诵。《全唐诗》存其诗四卷。",
+    Picture: "https://song.gushiwen.cn/authorImg/lishen.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73cd"),
+    "auth_name": "张说",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_e47835478657.aspx",
+    Intro: "张说(667年～730年) 唐代文学家，诗人，政治家。字道济，一字说之。原籍范阳（今河北涿县），世居河东（今山西永济），徙家洛阳。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangshuo.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ce"),
+    "auth_name": "吴均",
+    dynasty: "南北朝",
+    link: "https://so.gushiwen.cn/authorv_da41370d6cf5.aspx",
+    Intro: "吴均（469年—520年） ，字叔庠，南朝梁文学家、史学家，吴兴故鄣（今浙江安吉）人。出身贫寒，性格耿直，好学有俊才。吴均既是历史学家，著《齐春秋》三十卷、注《后汉书》九十卷等；又是著名的文学家，有《吴均集》二十卷，惜皆已亡佚。",
+    Picture: "https://song.gushiwen.cn/authorImg/wujun.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73cf"),
+    "auth_name": "列子",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_de8c4d88daec.aspx",
+    Intro: "列子（大约公元前450年—公元前375年即战国年间，享年75岁），战国前期道家代表人物。名寇，又名御寇（“列子”是后人对他的尊称），华夏族，周朝郑国圃田（今河南省郑州市）人，古帝王列山氏之后。先秦天下十豪之一，著名的道学者、思想家、哲学家、文学家、教育家。对后世哲学、美学、文学、科技、养生、乐曲、宗教影响非常深远。著有《列子》，其学说本于黄帝老子，归同于老、庄。创立了先秦哲学学派贵虚学派（列子学）。是介于老子与庄子之间道家学派承前启后的重要传承人物。",
+    Picture: "https://song.gushiwen.cn/authorImg/lieyukou.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73d0"),
+    "auth_name": "谢朓",
+    dynasty: "南北朝",
+    link: "https://so.gushiwen.cn/authorv_b728df127bcb.aspx",
+    Intro: "谢朓（464~499年），字玄晖。汉族，陈郡阳夏（今河南太康县）人。南朝齐时著名的山水诗人，出身世家大族。谢朓与谢灵运同族，世称“小谢”。初任竟陵王萧子良功曹、文学，为“竟陵八友”之一。后官宣城太守，终尚书吏部郎，又称谢宣城、谢吏部。东昏侯永元初，遭始安王萧遥光诬陷，下狱死。曾与沈约等共创“永明体”。今存诗二百余首，多描写自然景物，间亦直抒怀抱，诗风清新秀丽，圆美流转，善于发端，时有佳句；又平仄协调，对偶工整，开启唐代律绝之先河。",
+    Picture: "https://song.gushiwen.cn/authorImg/xietiao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73d1"),
+    "auth_name": "顾况",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_d2c43a8ea55a.aspx",
+    Intro: "顾况（生卒年不详），字逋翁，号华阳真逸（一说华阳真隐）。晚年自号悲翁，汉族，唐朝海盐人，（今在浙江海宁境内）人。唐代诗人、画家、鉴赏家。他一生官位不高，曾任著作郎，因作诗嘲讽得罪权贵，贬饶州司户参军。晚年隐居茅山，有《华阳集》行世。",
+    Picture: "https://song.gushiwen.cn/authorImg/gukuang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73d2"),
+    "auth_name": "吴融",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_a4d0598c1f4c.aspx",
+    Intro: "吴融，唐代诗人。字子华，越州山阴（今浙江绍兴）人。吴融生于唐宣宗大中四年（850），卒于唐昭宗天复三年（903），享年五十四岁。他生当晚唐后期，一个较前期更为混乱、矛盾、黑暗的时代，他死后三年，曾经盛极一时的大唐帝国也就走入历史了，因此，吴融可以说是整个大唐帝国走向灭亡的见证者之一。",
+    Picture: "https://song.gushiwen.cn/authorImg/wurong.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73d3"),
+    "auth_name": "庾信",
+    dynasty: "南北朝",
+    link: "https://so.gushiwen.cn/authorv_b2062eef6b39.aspx",
+    Intro: "庾信（513—581）字子山，小字兰成，北周时期人。南阳新野（今属河南）人。他以聪颖的资质，在梁这个南朝文学的全盛时代积累了很高的文学素养，又来到北方，以其沉痛的生活经历丰富了创作的内容，并多少接受了北方文化的某些因素，从而形成自己的独特面貌。",
+    Picture: "https://song.gushiwen.cn/authorImg/yuxin.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73d4"),
+    "auth_name": "孔丘",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_54852b07c8f0.aspx",
+    Intro: "孔子（公元前551年9月28日―公元前479年4月11日），子姓，孔氏，名丘，字仲尼，春秋末期鲁国陬邑（今山东曲阜）人，祖籍宋国栗邑（今河南夏邑），中国古代思想家、教育家，儒家学派创始人。孔子是当时社会上最博学者之一，在世时就被尊奉为“天纵之圣”“天之木铎”，更被后世统治者尊为孔圣人、至圣、至圣先师、大成至圣文宣王先师、万世师表。其思想对中国和世界都有深远的影响，其人被列为“世界十大文化名人”之首。　",
+    Picture: "https://song.gushiwen.cn/authorImg/kongqiu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73d5"),
+    "auth_name": "李端",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_82dc795fbcac.aspx",
+    Intro: "李端（约737年—约784年），字正已，出身赵郡李氏东祖房，唐代诗人。是北齐文宣帝高洋皇后李祖娥的堂弟李孝贞六世孙。少居庐山，师事诗僧皎然。大历五年进士。曾任秘书省校书郎、杭州司马。晚年辞官隐居湖南衡山，自号衡岳幽人。今存《李端诗集》三卷。其诗多为应酬之作，多表现消极避世思想，个别作品对社会现实亦有所反映，一些写闺情的诗也清婉可诵，其风格与司空曙相似。李端是大历十才子之一。今存《李端诗集》三卷。其子李虞仲，官至兵部侍郎。",
+    Picture: "https://song.gushiwen.cn/authorImg/liduan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73d6"),
+    "auth_name": "王翰",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_2f56f31e2127.aspx",
+    Intro: "王翰（公元687年~726年），字子羽，并州晋阳（今山西太原市）人，唐代边塞诗人。与王昌龄同时期，王翰这样一个有才气的诗人，其集不传。其诗载于《全唐诗》的，仅有14首。登进士第，举直言极谏，调昌乐尉。复举超拔群类，召为秘书正字。擢通事舍人、驾部员外。出为汝州长史，改仙州别驾。",
+    Picture: "https://song.gushiwen.cn/authorImg/wanghan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73d7"),
+    "auth_name": "程垓",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_45c7b7ffa770.aspx",
+    Intro: "程垓字正伯，眉山（今属四川）人。苏轼中表程之才（字正辅）之孙。淳熙十三年（1186）游临安，陆游为其所藏山谷帖作跋，未几归蜀。撰有帝王君臣论及时务利害策五十篇。绍熙三年（1192），已五十许，杨万里荐以应贤良方正科。绍熙五年（1194）乡人王称序其词，谓“程正伯以诗词名，乡之人所知也。余顷岁游都下，数见朝士，往往亦称道正伯佳句”。冯煦《蒿庵论词》：“程正伯凄婉绵丽，与草窗所录《绝妙好词》家法相近。”有《书舟词》（一作《书舟雅词》）一卷。",
+    Picture: "没"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73d8"),
+    "auth_name": "黄景仁",
+    dynasty: "清代",
+    link: "https://so.gushiwen.cn/authorv_961d3db85f01.aspx",
+    Intro: "黄景仁（1749～1783），清代诗人。字汉镛，一字仲则，号鹿菲子，阳湖（今江苏省常州市）人。四岁而孤，家境清贫，少年时即负诗名，为谋生计，曾四方奔波。一生怀才不遇，穷困潦倒，后授县丞，未及补官即在贫病交加中客死他乡，年仅35岁。诗负盛名，为“毗陵七子”之一。诗学李白，所作多抒发穷愁不遇、寂寞凄怆之情怀，也有愤世嫉俗的篇章。七言诗极有特色。亦能词。著有《两当轩全集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/huangjingren.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73d9"),
+    "auth_name": "纪昀",
+    dynasty: "清代",
+    link: "https://so.gushiwen.cn/authorv_6fbeeeefce3b.aspx",
+    Intro: "纪昀 jǐ yún (1724年6月-- 1805年2月），字晓岚，一字春帆，晚号石云，道号观弈道人。历雍正、乾隆、嘉庆三朝，因其“敏而好学可为文，授之以政无不达”（嘉庆帝御赐碑文），故卒后谥号文达，乡里世称文达公。在文学作品、通俗评论中，常被称为纪晓岚。清乾隆年间的著名学者，政治人物，直隶献县（今中国河北献县）人。官至礼部尚书、协办大学士，曾任《四库全书》总纂修官。代表作品《阅微草堂笔记》。",
+    Picture: "https://song.gushiwen.cn/authorImg/jijun.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73da"),
+    "auth_name": "徐再思",
+    dynasty: "元代",
+    link: "https://so.gushiwen.cn/authorv_79bc07db1e74.aspx",
+    Intro: "徐再思引(1320年前后在世)，元代散曲作家。字德可，曾任嘉兴路吏。因喜食甘饴，故号甜斋。浙江嘉兴人。生卒年不详，与贯云石为同时代人，今存所作散曲小令约100首。作品与当时自号酸斋的贯云石齐名，称为“酸甜乐府”。后人任讷又将二人散曲合为一编，世称《酸甜乐府》，收有他的小令103首。",
+    Picture: "没"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73db"),
+    "auth_name": "杨炯",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_49f2eee37817.aspx",
+    Intro: "杨炯（650年－692年），汉族，弘农华阴（今属陕西）人，排行第七；唐朝诗人，初唐四杰之一。显庆六年（公元661年），年仅11岁的杨炯被举为神童，上元三年（676年）应制举及第，授校书郎。后又任崇文馆学士，迁詹事、司直。垂拱元年（685年），降官为梓州司法参军。天授元年（690年），任教于洛阳宫中习艺馆。如意元年（692年）秋后改任盈川县令，吏治以严酷著称，卒于任所。因此后人称他为“杨盈川”。",
+    Picture: "https://song.gushiwen.cn/authorImg/yangjiong.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73dc"),
+    "auth_name": "李之仪",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_7bfda9741f8c.aspx",
+    Intro: "李之仪(1038～1117）北宋词人。字端叔，自号姑溪居士、姑溪老农。汉族，沧州无棣（庆云县）人。哲宗元祐初为枢密院编修官，通判原州。元祐末从苏轼于定州幕府，朝夕倡酬。元符中监内香药库，御史石豫参劾他曾为苏轼幕僚，不可以任京官，被停职。徽宗崇宁初提举河东常平。后因得罪权贵蔡京，除名编管太平州（今安徽当涂），后遇赦复官，晚年卜居当涂。著有《姑溪词》一卷、《姑溪居士前集》五十卷和《姑溪题跋》二卷。",
+    Picture: "https://song.gushiwen.cn/authorImg/lizhiyi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73dd"),
+    "auth_name": "张继",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_623fb18b7792.aspx",
+    Intro: "张继（约715~约779）字懿孙，汉族，襄州人（今湖北襄阳人）。唐代诗人，他的生平不甚可知。据诸家记录，仅知他是天宝十二年（公元七五三年）的进士。大历中，以检校祠部员外郎为洪州（今江西南昌市）盐铁判官。他的诗爽朗激越，不事雕琢，比兴幽深，事理双切，对后世颇有影响。但可惜流传下来的不到50首。他的最著名的诗是《枫桥夜泊》。",
+    Picture: "没"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73de"),
+    "auth_name": "马戴",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_0955ca350ffe.aspx",
+    Intro: "马戴（799—869），字虞臣，唐定州曲阳（今河北省曲阳县）人。晚唐时期著名诗人。",
+    Picture: "没"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73df"),
+    "auth_name": "吕岩",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_02835e06c206.aspx",
+    Intro: "吕岩，也叫做吕洞宾。唐末、五代著名道士。名喦，号纯阳子，自称回道人。世称吕祖或纯阳祖师，为民间神话故事八仙之一。较早的宋代记载，称他为“关中逸人”或“关右人”，元代以后比较一致的说法，则为河中府蒲坂县永乐镇（今属山西芮城）人，或称世传为东平（治在今山东东平）人。",
+    Picture: "https://song.gushiwen.cn/authorImg/lvyan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73e0"),
+    "auth_name": "陶弘景",
+    dynasty: "南北朝",
+    link: "https://so.gushiwen.cn/authorv_4cbc370b2db5.aspx",
+    Intro: "陶弘景（公元456—536年），字通明，南朝梁时丹阳秣陵（今江苏南京）人，号华阳隐居（自号华阳隐居）。著名的医药家、炼丹家、文学家，人称“山中宰相”。作品有《本草经注》、《集金丹黄白方》、《二牛图》、《华阳陶隐居集》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/taohongjing.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73e1"),
+    "auth_name": "司空曙",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_2b648ebf4318.aspx",
+    Intro: "司空曙（720年－790年），字文初（《唐才子传》作文明，此从《新唐书》），广平府（今河北省永年县。唐时广平府辖区为现在的广平县和永年县等。依《永年县志》记载，司空曙为今天的永年县）人，唐朝诗人，约唐代宗大历初前后在世。司空曙为人磊落有奇才，与李约为至交。他是大历十才子之一，同时期作家有卢纶，钱起，韩翃等。他的诗多幽凄情调，间写乱后的心情。诗中常有好句，如后世传诵的“乍见翻疑梦，相悲各问年”，像是不很着力，却是常人心中所有。",
+    Picture: "https://song.gushiwen.cn/authorImg/sikongshu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73e2"),
+    "auth_name": "吴潜",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_06c9f58eb897.aspx",
+    Intro: "吴潜（1195—1262） 字毅夫，号履斋，宣州宁国（今属安徽）人。宁宗嘉定十年（1217）举进士第一，授承事郎，迁江东安抚留守。理宗淳祐十一年（1251）为参知政事，拜右丞相兼枢密使，封崇国公。次年罢相，开庆元年（1259）元兵南侵攻鄂州，被任为左丞相，封庆国公，后改许国公。被贾似道等人排挤，罢相，谪建昌军，徙潮州、循州。与姜夔、吴文英等交往，但词风却更近于辛弃疾。其词多抒发济时忧国的抱负与报国无门的悲愤。格调沉郁，感慨特深。著有《履斋遗集》，词集有《履斋诗余》。",
+    Picture: "https://song.gushiwen.cn/authorImg/wuqian.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73e3"),
+    "auth_name": "王绩",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_6d77998d6dac.aspx",
+    Intro: "王绩(约590～644)，字无功，号东皋子，绛州龙门(今山西河津)人。隋末举孝廉，除秘书正字。不乐在朝，辞疾，复授扬州六合丞。时天下大乱，弃官还故乡。唐武德中，诏以前朝官待诏门下省。贞观初，以疾罢归河渚间，躬耕东皋，自号“东皋子”。性简傲，嗜酒，能饮五斗，自作《五斗先生传》 ，撰 《酒经》 、《酒谱》 。其诗近而不浅，质而不俗，真率疏放，有旷怀高致，直追魏晋高风。律体滥觞于六朝，而成型于隋唐之际，无功实为先声。",
+    Picture: "https://song.gushiwen.cn/authorImg/wangji.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73e4"),
+    "auth_name": "常建",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_68a453f313d5.aspx",
+    Intro: "常建(708-765)，唐代诗人，字号不详，有说是邢台人或说长安（今陕西西安）人，开元十五年与王昌龄同榜进士，长仕宦不得意，来往山水名胜，过着一个很长时期的漫游生活。后移家隐居鄂渚。天宝中，曾任盱眙尉。",
+    Picture: "https://song.gushiwen.cn/authorImg/changjian.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73e5"),
+    "auth_name": "班固",
+    dynasty: "两汉",
+    link: "https://so.gushiwen.cn/authorv_870e6ba7bbf4.aspx",
+    Intro: "班固（32年—92年），字孟坚，扶风安陵（今陕西咸阳东北）人，东汉著名史学家、文学家。班固出身儒学世家，其父班彪、伯父班嗣，皆为当时著名学者。班固一生著述颇丰。作为史学家，《汉书》是继《史记》之后中国古代又一部重要史书，“前四史”之一；作为辞赋家，班固是“汉赋四大家”之一，《两都赋》开创了京都赋的范例，列入《文选》第一篇；同时，班固还是经学理论家，他编辑撰成的《白虎通义》，集当时经学之大成，使谶纬神学理论化、法典化。",
+    Picture: "https://song.gushiwen.cn/authorImg/bangu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73e6"),
+    "auth_name": "唐婉",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_cab314bc1132.aspx",
+    Intro: "唐琬（1128～1156），又名婉，字蕙仙，越州山阴（今浙江绍兴）人。陆游与唐琬以一只精美无比的家传凤钗作信物，与唐家订亲。陆游十九岁（绍兴十四年）与唐琬结合。唐琬的才华横溢与陆游的亲密感情，引起了陆母的不满，遂命陆游休了唐琬。公元1151年（绍兴二十一年），礼部会试失利后陆游到沈园去游玩，偶然遇见了唐琬，两个人都非常难过。陆游感伤地在墙上题了一首《钗头凤·红酥手》词。1156年，唐琬再次来到沈园瞥见陆游的题词，不由感慨万千，于是和了一阕《钗头凤·世情薄》。同年秋，便抑郁而终。",
+    Picture: "https://song.gushiwen.cn/authorImg/tangwan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73e7"),
+    "auth_name": "吕蒙正",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_3722daca376d.aspx",
+    Intro: "吕蒙正（944~1011年），字圣功，河南洛阳人，祖籍在今莱州市城港路街道军寨址村。北宋初年宰相。太平兴国二年（公元977年），考中状元后，授将作丞，出任升州通判。步步高升，三次登上相位，封为许国公，授太子太师。为人宽厚正直，对上遇礼而敢言，对下宽容有雅度。大中祥符四年（公元1011年），去世，终年六十八，追赠中书令，谥号文穆。",
+    Picture: "没"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73e8"),
+    "auth_name": "黄巢",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_45bdbf3f2268.aspx",
+    Intro: "黄巢（820年－884年），曹州冤句（今山东菏泽西南）人，唐末农民起义领袖。黄巢出身盐商家庭，善于骑射，粗通笔墨，少有诗才，黄巢五岁时候便可对诗，但成年后却屡试不第。王仙芝起义前一年，关东发生了大旱，官吏强迫百姓缴租税，服差役，百姓走投无路，聚集黄巢周围，与唐廷官吏进行过多次武装冲突。十二月十三日，兵进长安，于含元殿即皇帝位，国号“大齐”，建元金统，大赦天下。中和四年（884年）六月十五日，黄巢败死狼虎谷。昭宗天复初年，黄巢侄子黄皓率剩余力量继续作战，在湖南为湘阴土豪邓进思伏杀，唐末农民起义结束。",
+    Picture: "https://song.gushiwen.cn/authorImg/huangchao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73e9"),
+    "auth_name": "刘基",
+    dynasty: "明代",
+    link: "https://so.gushiwen.cn/authorv_a1f725c6aa25.aspx",
+    Intro: "刘基（1311年7月1日－1375年5月16日）字伯温，谥曰文成，元末明初杰出的军事谋略家、政治家、文学家和思想家，明朝开国元勋，汉族，浙江文成南田（原属青田）人，故时人称他刘青田，明洪武三年（1370）封诚意伯，人们又称他刘诚意。武宗正德九年追赠太师，谥号文成，后人又称他刘文成、文成公。他以神机妙算、运筹帷幄著称于世。刘伯温是中国古代的一位传奇人物，至今在中国大陆、港澳台乃至东南亚、日韩等地仍有广泛深厚的民间影响力。",
+    Picture: "https://song.gushiwen.cn/authorImg/liuji.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ea"),
+    "auth_name": "张元干",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_02a7e7e6cfd2.aspx",
+    Intro: "张元干（1091年—约1161年），字仲宗，号芦川居士、真隐山人，晚年自称芦川老隐。芦川永福人（今福建永泰嵩口镇月洲村人）。历任太学上舍生、陈留县丞。金兵围汴，秦桧当国时，入李纲麾下，坚决抗金，力谏死守。曾赋《贺新郎》词赠李纲，后秦桧闻此事，以他事追赴大理寺除名削籍。元干尔后漫游江浙等地，客死他乡，卒年约七十，归葬闽之螺山。张元干与张孝祥一起号称南宋初期“词坛双璧”。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangyuangan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73eb"),
+    "auth_name": "李颀",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_22f0b211ccbc.aspx",
+    Intro: "李颀(690-751)，汉族，东川（今四川三台）人（有争议），唐代诗人。少年时曾寓居河南登封。开元十三年进士，做过新乡县尉的小官，诗以写边塞题材为主，风格豪放，慷慨悲凉，七言歌行尤具特色。",
+    Picture: "https://song.gushiwen.cn/authorImg/liqi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ec"),
+    "auth_name": "周密",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_894a6c66e6a6.aspx",
+    Intro: "周密 （1232-1298），字公谨，号草窗，又号四水潜夫、弁阳老人、华不注山人，南宋词人、文学家。祖籍济南，流寓吴兴（今浙江湖州）。宋德右间为义乌县（今年内属浙江）令。入元隐居不仕。自号四水潜夫。他的诗文都有成就，又能诗画音律，尤好藏弃校书，一生著述较丰。著有《齐东野语》、《武林旧事》、《癸辛杂识》、《志雅堂要杂钞》等杂著数十种。其词远祖清真，近法姜夔，风格清雅秀润，与吴文英并称“二窗”，词集名《频洲渔笛谱》、《草窗词》。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhoumi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ed"),
+    "auth_name": "张乔",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_ee60971ad9b4.aspx",
+    Intro: "（生卒年不详)，今安徽贵池人，懿宗咸通中年进士，当时与许棠、郑谷、张宾等东南才子称“咸通十哲”黄巢起义时，隐居九华山以终。其诗多写山水自然，不乏清新之作，诗清雅巧思，风格也似贾岛。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangqiao.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ee"),
+    "auth_name": "戎昱",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_6dafeedcb48e.aspx",
+    Intro: "戎昱，(744～800)唐代诗人。荆州（今湖北江陵）人，郡望扶风（今属陕西）。少年举进士落第，游名都山川，后中进士。宝应元年(762)，从滑州、洛阳西行，经华阴，遇见王季友，同赋《苦哉行》。大历二年(767)秋回故乡，在荆南节度使卫伯玉幕府中任从事。后流寓湖南，为潭州刺史崔瓘、桂州刺史李昌巙幕僚。建中三年(782)居长安，任侍御史。翌年贬为辰州刺史。后又任虔州刺史。晚年在湖南零陵任职，流寓桂州而终。中唐前期比较注重反映现实的诗人之一。名作《苦哉行》写战争给人民带来灾难。羁旅游宦、感伤身世的作品以《桂州腊夜》较有名。",
+    Picture: "没"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ef"),
+    "auth_name": "刘邦",
+    dynasty: "两汉",
+    link: "https://so.gushiwen.cn/authorv_2466a6bc5628.aspx",
+    Intro: "刘邦（公元前256年12月28日—公元前195年6月1日），字季，汉沛郡丰县中阳里人（今江苏省徐州市丰县）人。中国历史上杰出的政治家、战略家和军事指挥家，汉朝开国皇帝，汉民族和汉文化的伟大开拓者之一，对汉族的发展以及中国的统一有突出贡献。 公元前195年，讨伐英布叛乱时，伤重不起。制定“白马之盟”后，驾崩于长安，谥号高皇帝，庙号太祖，葬于长陵 。",
+    Picture: "https://song.gushiwen.cn/authorImg/liubang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73f0"),
+    "auth_name": "王湾",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_af94a5c4ceea.aspx",
+    Intro: "王湾（约693年—约751年），字号不详，唐代诗人，洛阳（今河南洛阳）人。玄宗先天年间（712年）进士及第，授荥阳县主簿。后由荥阳主簿受荐编书，参与集部的编撰辑集工作，书成之后，因功授任洛阳尉。王湾“词翰早著”，现存诗10首，其中最出名的是《次北固山下》。",
+    Picture: "https://song.gushiwen.cn/authorImg/wangwan.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73f1"),
+    "auth_name": "晁补之",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_d6bbd9ff7e78.aspx",
+    Intro: "晁补之（公元1053年—公元1110年），字无咎，号归来子，汉族，济州巨野（今属山东巨野县）人，北宋时期著名文学家。为“苏门四学士”（另有北宋诗人黄庭坚、秦观、张耒）之一。曾任吏部员外郎、礼部郎中。 工书画，能诗词，善属文。与张耒并称“晁张”。其散文语言凝练、流畅，风格近柳宗元。诗学陶渊明。其词格调豪爽，语言清秀晓畅，近苏轼。但其诗词流露出浓厚的消极归隐思想。著有《鸡肋集》、《晁氏琴趣外篇》等。",
+    Picture: "https://song.gushiwen.cn/authorImg/chaobuzhi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73f2"),
+    "auth_name": "张衡",
+    dynasty: "两汉",
+    link: "https://so.gushiwen.cn/authorv_636cef5b84f0.aspx",
+    Intro: "张衡（78－139），字平子，汉族，南阳西鄂（今河南南阳市石桥镇）人，我国东汉时期伟大的天文学家、数学家、发明家、地理学家、制图学家、文学家、学者，在汉朝官至尚书，为我国天文学、机械技术、地震学的发展作出了不可磨灭的贡献。由于他的贡献突出，联合国天文组织曾将太阳系中的1802号小行星命名为“张衡星”。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhangheng.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73f3"),
+    "auth_name": "崔护",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_04138f12360f.aspx",
+    Intro: "崔护（772年—846年），字殷功，唐代博陵（今河北定州）人，生平事迹不详，唐代诗人。公元796年（贞元十二年）登第（进士及第）。公元829年（太和三年）为京兆尹，同年为御史大夫、广南节度使。其诗诗风精练婉丽，语极清新。《全唐诗》存诗六首，皆是佳作，尤以《题都城南庄》流传最广，脍炙人口，有目共赏。该诗以“人面桃花，物是人非”这样一个看似简单的人生经历，道出了千万人都似曾有过的共同生活体验，为诗人赢得了不朽的诗名。",
+    Picture: "https://song.gushiwen.cn/authorImg/cuihu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73f4"),
+    "auth_name": "陈著",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_14fd383123cc.aspx",
+    Intro: "（一二一四～一二九七），字谦之，一字子微，号本堂，晚年号嵩溪遗耄，鄞县（今浙江宁波）人，寄籍奉化。理宗宝祐四年（一二五六）进士，调监饶州商税。景定元年（一二六○），为白鹭书院山长，知安福县。",
+    Picture: "https://song.gushiwen.cn/authorImg/chenzhu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73f5"),
+    "auth_name": "沈佺期",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_d721c48536ea.aspx",
+    Intro: "沈佺期（约656 — 约715），字云卿，相州内黄（今安阳市内黄县）人，祖籍吴兴（今浙江湖州）。 唐代诗人。与宋之问齐名，称“ 沈宋 ”。善属文，尤长七言之作。擢进士第。长安中，累迁通事舍人，预修《三教珠英》，转考功郎给事中。坐交张易之，流驩州。稍迁台州录事参军。神龙中，召见，拜起居郎，修文馆直学士，历中书舍人，太子少詹事。开元初卒。",
+    Picture: "https://song.gushiwen.cn/authorImg/shenquanqi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73f6"),
+    "auth_name": "陆机",
+    dynasty: "魏晋",
+    link: "https://so.gushiwen.cn/authorv_d4952941ee78.aspx",
+    Intro: "陆机（261－303），字士衡，吴郡吴县（今江苏苏州）人，西晋文学家、书法家，孙吴丞相陆逊之孙、大司马陆抗之子，与其弟陆云合称“二陆”。孙吴灭亡后出仕晋朝司马氏政权，曾历任平原内史、祭酒、著作郎等职，世称“陆平原”。后死于“八王之乱”，被夷三族。他“少有奇才，文章冠世”（《晋书·陆机传》），与弟陆云俱为中国西晋时期著名文学家，被誉为“太康之英”。陆机还是一位杰出的书法家，他的《平复帖》是中古代存世最早的名人书法真迹。",
+    Picture: "https://song.gushiwen.cn/authorImg/luji.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73f7"),
+    "auth_name": "姜子牙",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_b9cb27168016.aspx",
+    Intro: "姜子牙（约前1156年—约前1017年），姜姓，吕氏，名尚，字子牙，号飞熊，河内郡汲县人。中国古代杰出的政治家、军事家、韬略家，周朝开国元勋，商末周初兵学奠基人。垂钓于渭水之滨，遇见西伯侯姬昌，拜为“太师”（武官名），尊称太公望，成为首席智囊，辅佐姬昌建立霸业。周武王即位后，尊为“师尚父”，成为周国军事统帅，人称姜尚。辅佐武王消灭商纣，建立周朝，封为齐侯，定都于营丘，成为姜氏齐国的缔造者、齐文化的创始人。辅佐执政周公旦，平定内乱，开疆扩土，建立成康之治。周康王六年，卒于镐京，长子姜伋嗣位。后世推崇备至，历代皇帝和文史典籍尊为兵家鼻祖、武圣、百家宗师。唐肃宗时期，追封为武成王，设立武庙祭祀。宋真宗时期，追谥昭烈。　",
+    Picture: "https://song.gushiwen.cn/authorImg/jiangziya.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73f8"),
+    "auth_name": "颜真卿",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_665b8c438556.aspx",
+    Intro: "颜真卿（709年－784年8月23日），字清臣，小名羡门子，别号应方，京兆万年（今陕西西安）人，祖籍琅玡临沂（今山东临沂）。唐朝名臣、书法家，秘书监颜师古五世从孙 、司徒颜杲卿从弟。颜真卿书法精妙，擅长行、楷。初学褚遂良，后师从张旭，得其笔法。其正楷端庄雄伟，行书气势遒劲，创“颜体”楷书，对后世影响很大。与赵孟頫、柳公权、欧阳询并称为“楷书四大家”。又与柳公权并称“颜柳”，被称为“颜筋柳骨”。又善诗文，有《韵海镜源》、《礼乐集》、《吴兴集》、《庐陵集》、《临川集》，均佚。宋人辑有《颜鲁公集》。",
+    Picture: "https://song.gushiwen.cn/authorImg/yanzhenqing.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73f9"),
+    "auth_name": "曾巩",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_3d8659414462.aspx",
+    Intro: "曾巩（1019年9月30日－1083年4月30日，天禧三年八月二十五日－元丰六年四月十一日），字子固，世称“南丰先生”。汉族，建昌南丰（今属江西）人，后居临川（今江西抚州市西）。曾致尧之孙，曾易占之子。嘉祐二年（1057）进士。北宋政治家、散文家，“唐宋八大家”之一，为“南丰七曾”（曾巩、曾肇、曾布、曾纡、曾纮、曾协、曾敦）之一。在学术思想和文学事业上贡献卓越。",
+    Picture: "https://song.gushiwen.cn/authorImg/zenggong.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73fa"),
+    "auth_name": "毛滂",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_12ce600de96c.aspx",
+    Intro: "毛滂（1056——？约1124）， 字泽民，衢州江山石门（今浙江衢州）人。北宋词人。生于“天下文宗儒师”世家。父维瞻、伯维藩、叔维甫皆为进士。他自幼酷爱诗文词赋，北宋元丰二年（1079），与西安（今浙江衢州）赵英结为伉俪。毛滂诗词被时人评为“豪放恣肆”，“自成一家”。元祐四年（1089）所作《惜分飞·富阳僧舍代作别语》小词结尾“今夜山深处，断魂分付潮回去”，南宋周辉认为含蓄情醇“语尽而意不尽，意尽而情不尽”。有《东堂集》十卷和《东堂词》一卷传世。",
+    Picture: "https://song.gushiwen.cn/authorImg/maopang.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73fb"),
+    "auth_name": "李渔",
+    dynasty: "清代",
+    link: "https://so.gushiwen.cn/authorv_e168d344dc03.aspx",
+    Intro: "李渔（1611年—1680年），原名仙侣，字谪凡，号天徒，后改名渔，字笠鸿，号笠翁，别号觉世稗官、笠道人、随庵主人、湖上笠翁等。金华兰溪（今属浙江）人，生于南直隶雉皋（今江苏如皋）。明末清初文学家、戏剧家、戏剧理论家、美学家。素有才子之誉，世称“李十郎”。一生著述五百多万字。其戏曲论著《闲情偶寄》，以结构、词采、音律、宾白、科诨、格局六方面论戏曲文学，以选剧、变调、授曲、教白、脱套五方面论戏曲表演，对中国古代戏曲理论有较大的丰富和发展。",
+    Picture: "https://song.gushiwen.cn/authorImg/liyu2.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73fc"),
+    "auth_name": "左思",
+    dynasty: "魏晋",
+    link: "https://so.gushiwen.cn/authorv_6d29abb0d24a.aspx",
+    Intro: "左思（约250～305）字太冲，齐国临淄（今山东淄博）人。西晋著名文学家，其《三都赋》颇被当时称颂，造成“洛阳纸贵”。左思自幼其貌不扬却才华出众。晋武帝时，因妹左棻被选入宫，举家迁居洛阳，任秘书郎。晋惠帝时，依附权贵贾谧，为文人集团“二十四友”的重要成员。永康元年（300年），因贾谧被诛，遂退居宜春里，专心著述。后齐王司马冏召为记室督，不就。太安二年（303年），因张方进攻洛阳而移居冀州，不久病逝。",
+    Picture: "https://song.gushiwen.cn/authorImg/zuosi.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73fd"),
+    "auth_name": "朱庆馀",
+    dynasty: "唐代",
+    link: "https://so.gushiwen.cn/authorv_08f4478aee24.aspx",
+    Intro: "朱庆馀，生卒年不详，名可久，以字行。越州（今浙江绍兴）人，宝历二年（826）进士，官至秘书省校书郎，见《唐诗纪事》卷四六、《唐才子传》卷六，《全唐诗》存其诗两卷。曾作《闺意献张水部》作为参加进士考试的“通榜”，增加中进士的机会。据说张籍读后大为赞赏，写诗回答他说：“越女新装出镜心，自知明艳更沉吟。 齐纨未足时人贵，一曲菱歌值万金。”于是朱庆馀声名大震。",
+    Picture: "https://song.gushiwen.cn/authorImg/zhuqingyu.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73fe"),
+    "auth_name": "梅尧臣",
+    dynasty: "宋代",
+    link: "https://so.gushiwen.cn/authorv_8d74c83d96aa.aspx",
+    Intro: "梅尧臣（1002～1060）字圣俞，世称宛陵先生，北宋著名现实主义诗人。汉族，宣州宣城（今属安徽）人。宣城古称宛陵，世称宛陵先生。初试不第，以荫补河南主簿。50岁后，于皇祐三年（1051）始得宋仁宗召试，赐同进士出身，为太常博士。以欧阳修荐，为国子监直讲，累迁尚书都官员外郎，故世称“梅直讲”、“梅都官”。曾参与编撰《新唐书》，并为《孙子兵法》作注，所注为孙子十家著（或十一家著）之一。有《宛陵先生集》60卷，有《四部丛刊》影明刊本等。词存二首。",
+    Picture: "https://song.gushiwen.cn/authorImg/meiyaochen.jpg"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed73ff"),
+    "auth_name": "孔子",
+    dynasty: "先秦",
+    link: "https://so.gushiwen.cn/authorv_3ad43254c14a.aspx",
+    Intro: "孔子（公元前551年9月28日－公元前479年4月11日），子姓，孔氏，名丘，字仲尼，鲁国陬邑（今山东曲阜）人，祖籍宋国（今河南），中国古代思想家、教育家，儒家学派创始人。孔子开创私人讲学之风，倡导仁义礼智信。有弟子三千，其中贤人七十二。曾带领部分弟子周游列国十三年，晚年修订六经（《诗》《书》《礼》《乐》《易》《春秋》）。去世后，其弟子及再传弟子把孔子及其弟子的言行语录和思想记录下来，整理编成《论语》。该书被奉为儒家经典。",
+    Picture: "没"
+} ]);
+db.getCollection("authors").insert([ {
+    _id: ObjectId("61a5e018ab607c8b11ed7400"),
+    "auth_name": "陈寿",
+    dynasty: "魏晋",
+    link: "https://so.gushiwen.cn/authorv_bc168825cd92.aspx",
+    Intro: "陈寿（233－297），字承祚，西晋史学家，巴西安汉（今四川南充）人。他小时候好学，师事同郡学者谯周，在蜀汉时曾任卫将军主簿、东观秘书郎、观阁令史、散骑黄门侍郎等职。当时，宦官黄皓专权，大臣都曲意附从。陈寿因为不肯屈从黄皓，所以屡遭遣黜。入晋以后，历任著作郎、长平太守、治书待御史等职。280年，晋灭东吴，结束了分裂局面。陈寿当时四十八岁，开始撰写并《三国志》。历经10年艰辛，陈寿完成了流传千古的历史巨著《三国志》。《三国志》是一部纪传体三国史，书中有440名三国历史人物的传记，全书共65卷，36.7万字，完整地记叙了自汉末至晋初近百年间中国由分裂走向统一的历史全貌。",
+    Picture: "https://song.gushiwen.cn/authorImg/chenshou.jpg"
+} ]);
