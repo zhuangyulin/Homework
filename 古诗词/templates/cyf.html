@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title>Home</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../static/css/bootstrap.css" />
+<link rel="stylesheet" href="../static/css/font-awesome.min.css" />
+<link rel="stylesheet" href="../static/css/linea-icon.css" />
+<link rel="stylesheet" href="../static/css/fancy-buttons.css" />
+
+<!--=== Google Fonts ===-->
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:600,400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+<!--=== Other CSS files ===-->
+<link rel="stylesheet" href="../static/css/animate.css" />
+<link rel="stylesheet" href="../static/css/jquery.vegas.css" />
+<link rel="stylesheet" href="../static/css/baraja.css" />
+<link rel="stylesheet" href="../static/css/jquery.bxslider.css" />
+
+<!--=== Main Stylesheets ===-->
+<link rel="stylesheet" href="../static/css/style.css" />
+<link rel="stylesheet" href="../static/css/responsive.css" />
+
+<!--=== Color Scheme, three colors are available red.css, orange.css and gray.css ===-->
+<link rel="stylesheet" id="scheme-source" href="../static/css/schemes/gray.css" />
+</head>
+<body>
+
+<!--=== Testimonials section Starts ===-->
+<section id="section-testimonials" class="testimonials-wrap">
+	<div class="section-overlay"></div>
+	<div class="container testimonials center animated" data-animation="rollIn" data-animation-delay="500">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="testimonial-slider">
+					<!-- Single Testimonial Starts -->
+					<div class="testimonial">
+						<p class="comment">
+							{{result[0]['Intro']}}
+						</p>
+						
+						<h5 class="happy-client">{{result[0]['auth_name']}}</h5>
+						<span class="client-info">{{result[0]['dynasty']}}</span>
+					</div>
+					<!-- Single Testimonial Ends -->
+					
+					<!-- Single Testimonial Starts -->
+					<div class="testimonial">
+						<p class="comment">
+							{{result[1]['Intro']}}
+						</p>
+						
+						<h5 class="happy-client">{{result[1]['auth_name']}}</h5>
+						<span class="client-info">{{result[1]['dynasty']}}</span>
+					</div>
+					<!-- Single Testimonial Ends -->
+					
+					<!-- Single Testimonial Starts -->
+					<div class="testimonial">
+						<p class="comment">
+							{{result[2]['Intro']}}
+						</p>
+						
+						<h5 class="happy-client">{{result[2]['auth_name']}}</h5>
+						<span class="client-info">{{result[2]['dynasty']}}</span>
+					</div>
+					<!-- Single Testimonial Ends -->
+				</div>
+				<div id="bx-pager" class="client-photos">
+					<a data-slide-index="0" href="" class="photo-hold">
+						<span class="photo-bg">
+							<img src="../static/images/libai.jpg" alt="" /> <!-- Client photo 1 -->
+						</span>
+					</a>
+					<a data-slide-index="1" href="" class="photo-hold">
+						<span class="photo-bg">
+							<img src="../static/images/nalanxingde.jpg" alt="" /> <!-- Client photo 2 -->
+						</span>
+					</a>
+					<a data-slide-index="2" href="" class="photo-hold">
+						<span class="photo-bg">
+							<img src="../static/images/taoyuanming.jpg" alt="" /> <!-- Client photo 3 -->
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--=== Testimonials section Ends ===-->
+
+<!--==== Essential files ====-->
+<script type="text/javascript" src="../static/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../static/js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="../static/js/modernizr.js"></script>
+<script type="text/javascript" src="../static/js/jquery.easing.1.3.js"></script>
+
+<!--==== Slider and Card style plugin ====-->
+<script type="text/javascript" src="../static/js/jquery.baraja.js"></script>
+<script type="text/javascript" src="../static/js/jquery.vegas.min.js"></script>
+<script type="text/javascript" src="../static/js/jquery.bxslider.min.js"></script>
+
+<!--==== MailChimp Widget plugin ====-->
+<script type="text/javascript" src="../static/js/jquery.ajaxchimp.min.js"></script>
+
+<!--==== Scroll and navigation plugins ====-->
+<script type="text/javascript" src="../static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="../static/js/jquery.nav.js"></script>
+<script type="text/javascript" src="../static/js/jquery.appear.js"></script>
+<script type="text/javascript" src="../static/js/jquery.fitvids.js"></script>
+
+<!--==== Custom Script files ====-->
+<script type="text/javascript" src="../static/js/custom.js"></script>
+
+</body>
+</html>
