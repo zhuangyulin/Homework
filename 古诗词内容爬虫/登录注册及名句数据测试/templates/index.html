@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>古诗文搜索</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../static/css/main.css">
+
+    </head>
+    <body>    
+
+        <!-- Navigation & Logo-->
+        <div class="mainmenu-wrapper">
+	        <div class="container">
+	        	
+		        <nav id="mainmenu" class="mainmenu">
+					<ul>
+						<li class="logo-wrapper"><a href="index.html"><img src="../static/img/mPurpose-logo.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
+						<li class="active">
+							<a href="index.html">名句</a>
+						</li>
+						<li class="active">
+							<form action="#" method="post">
+								<input type="text" name="sname"/>
+								<button type="submit" class="search">search</button>
+							</form>
+						</li>
+
+						</li>
+						
+					</ul>
+					
+				</nav>
+			</div>
+		</div>
+
+        <!-- Homepage Slider -->
+        <div class="homepage-slider">
+        	<div id="sequence">
+				<ul class="sequence-canvas">
+					<!-- Slide 1 -->
+					<li class="bg4">
+						<!-- Slide Title -->
+						<h2 class="title">{{data[0]['sentence']}}</h2>
+						<!-- <h2 class="title">{{data[0]['sen_author']}}</h2> -->
+						<img class="slide-img" src="../static/img/homepage-slider/poetry.jpg" alt="Slide 1" />
+					</li>
+					<!-- End Slide 1 -->
+					<!-- Slide 2 -->
+					<li class="bg3">
+						<!-- Slide Title -->
+						<h2 class="title">{{data[1]['sentence']}}</h2>
+
+						<img class="slide-img" src="../static/img/homepage-slider/poetry1.jpg" alt="Slide 2" />
+					</li>
+					<!-- End Slide 2 -->
+					<!-- Slide 3 -->
+					<li class="bg1">
+						<!-- Slide Title -->
+						<h2 class="title">{{data[2]['sentence']}}</h2>
+
+						<img class="slide-img" src="../static/img/homepage-slider/poetry2.jpg" alt="Slide 3" />
+					</li>
+					<!-- End Slide 3 -->
+				</ul>
+				<div class="sequence-pagination-wrapper">
+					<ul class="sequence-pagination">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</div>
+			</div>
+        </div>
+        <!-- End Homepage Slider -->
+
+		<!-- Services -->
+        <div class="section">
+	        <div class="container">
+	        	<div class="row">
+	        		<div class="col-md-4 col-sm-6">
+
+	        			<div class="service-wrapper">
+		        			<img src="../static/img/service-icon/diamond.png" alt="Service 1">
+		        			<h3>{{data[0]['sen_name']}}</h3>
+		        			<p>{{data[0]['sentence']}}</p>
+		        			<a href="#" class="btn">{{data[0]['sen_author']}}</a>
+		        		</div>
+	        		</div>
+	        		<div class="col-md-4 col-sm-6">
+	        			<div class="service-wrapper">
+		        			<img src="../static/img/service-icon/ruler.png" alt="Service 2">
+		        			<h3>{{data[1]['sen_name']}}</h3>
+		        			<p>{{data[1]['sentence']}}</p>
+		        			<a href="#" class="btn">{{data[1]['sen_author']}}</a>
+		        		</div>
+	        		</div>
+	        		<div class="col-md-4 col-sm-6">
+	        			<div class="service-wrapper">
+		        			<img src="../static/img/service-icon/box.png" alt="Service 3">
+		        			<h3>{{data[2]['sen_name']}}</h3>
+		        			<p>{{data[2]['sentence']}}</p>
+		        			<a href="#" class="btn">{{data[1]['sen_author']}}</a>
+		        		</div>
+	        		</div>
+	        	</div>
+	        </div>
+	    </div>
+	    <!-- End Services -->
+
+
+		<!-- Pricing Table -->
+	    <div class="section">
+	    	<div class="container">
+	        	<div class="row">
+	        		<!-- Pricing Plans Wrapper -->
+	        		<div class="pricing-wrapper col-md-12">
+        				<!-- Pricing Plan -->
+						<div class="pricing-plan">
+							<!-- Pricing Plan Ribbon -->
+							<div class="ribbon-wrapper">
+								<div class="price-ribbon ribbon-red">Popular</div>
+							</div>
+							<h2 class="pricing-plan-title">{{data[3]['sen_name']}}</h2>
+							<p class="pricing-plan-price">{{data[3]['type_classify']}}</p>
+							<!-- Pricing Plan Features -->
+							<ul class="pricing-plan-features">
+								<h2 class="pricing-plan-title">{{data[3]['sentence']}}</h2>
+							</ul>
+							<a href="index.html" class="btn">{{data[3]['sen_author']}}</a>
+						</div>
+						<!-- End Pricing Plan -->
+					    <div class="pricing-plan">
+							<h2 class="pricing-plan-title">{{data[4]['sen_name']}}</h2>
+							<p class="pricing-plan-price">{{data[4]['type_classify']}}</p>
+								<ul class="pricing-plan-features">
+									<h2 class="pricing-plan-title">{{data[4]['sentence']}}</h2>
+								</ul>
+							<a href="index.html" class="btn">{{data[4]['sen_author']}}</a>
+					    </div>
+					    <!-- Promoted Pricing Plan -->
+					    <div class="pricing-plan pricing-plan-promote">
+								<h2 class="pricing-plan-title">{{data[5]['sen_name']}}</h2>
+								<p class="pricing-plan-price">{{data[5]['type_classify']}}</p>
+								<ul class="pricing-plan-features">
+									<h2 class="pricing-plan-title">{{data[5]['sentence']}}</h2>
+								</ul>
+							<a href="index.html" class="btn">{{data[5]['sen_author']}}</a>
+					    </div>
+					    <div class="pricing-plan">
+					    	<!-- Pricing Plan Ribbon -->
+							<div class="ribbon-wrapper">
+								<div class="price-ribbon ribbon-green">New</div>
+							</div>
+							<h2 class="pricing-plan-title">{{data[6]['sen_name']}}</h2>
+							<p class="pricing-plan-price">{{data[6]['type_classify']}}</p>
+								<h2 class="pricing-plan-title">{{data[6]['sentence']}}</h2>
+							<a href="index.html" class="btn">{{data[6]['sen_author']}}</a>
+					    </div>
+	        		</div>
+	        		<!-- End Pricing Plans Wrapper -->
+	        	</div>
+	    	</div>
+	    </div>
+	    <!-- End Pricing Table -->
+
+        <script>window.jQuery || document.write('<script src="../static/js/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="../static/js/jquery.sequence-min.js"></script>
+        <script src="../static/js/template.js"></script>
+
+    </body>
+</html>
