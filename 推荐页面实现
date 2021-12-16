@@ -1,0 +1,37 @@
+@ind.route('/recommend', methods=['GET', 'POST'])
+def test():
+    key = request.form.get('name')
+    if key == "1":
+        myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+        mydb = myclient["ancientPoetry"]
+        mycol = mydb["sentence"]
+        result = []
+        datas = []
+        for i in mycol.aggregate([{"$sample": {'size': 5}}]):
+            result.append(i)
+        print(result)
+        for i in result:
+            poem = {}
+            poem['名句'] = i['sentence']
+            poem['作者名'] = i['sen_author']
+            poem['诗词名'] = i['sen_name']
+            poem['类型'] = i['type_classify']
+            datas.append(poem)
+        return render_template('recommend.html', datas=datas)
+    else:
+        myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+        mydb = myclient["ancientPoetry"]
+        mycol = mydb["sentence"]
+        result = []
+        datas = []
+        for i in mycol.aggregate([{"$sample": {'size': 5}}]):
+            result.append(i)
+        print(result)
+        for i in result:
+            poem = {}
+            poem['名句'] = i['sentence']
+            poem['作者名'] = i['sen_author']
+            poem['诗词名'] = i['sen_name']
+            poem['类型'] = i['type_classify']
+            datas.append(poem)
+        return render_template('recommend.html', datas=datas)
