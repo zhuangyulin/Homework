@@ -1,0 +1,269 @@
+<div class="famous-area" id="famous">
+		<div class="famous-area-left">
+			<div class="famous-area-left-son">
+				<div class="count">
+					<a  class="a1"  href="#">一声梧叶一声秋，一点芭蕉一点愁，三更归梦三更后。</a>
+					<span class="span1">——</span>
+					<a  class="a1"  href="#">徐再思《水仙子·夜雨》</a>
+				</div>
+				<div class="count">
+					<a  class="a1"  href="#">一声梧叶一声秋，一点芭蕉一点愁，三更归梦三更后。</a>
+					<span class="span1">——</span>
+					<a  class="a1"  href="#">徐再思《水仙子·夜雨》</a>
+				</div>
+				<div class="count">
+					<a  class="a1"  href="#">一声梧叶一声秋，一点芭蕉一点愁，三更归梦三更后。</a>
+					<span class="span1">——</span>
+					<a  class="a1"  href="#">徐再思《水仙子·夜雨》</a>
+				</div>
+				<div class="count">
+					<a  class="a1"  href="#">一声梧叶一声秋，一点芭蕉一点愁，三更归梦三更后。</a>
+					<span class="span1">——</span>
+					<a  class="a1"  href="#">徐再思《水仙子·夜雨》</a>
+				</div>
+				<div class="count">
+					<a  class="a1"  href="#">一声梧叶一声秋，一点芭蕉一点愁，三更归梦三更后。</a>
+					<span class="span1">——</span>
+					<a  class="a1"  href="#">徐再思《水仙子·夜雨》</a>
+				</div>
+				<div class="count">
+					<a  class="a1"  href="#">一声梧叶一声秋，一点芭蕉一点愁，三更归梦三更后。</a>
+					<span class="span1">——</span>
+					<a  class="a1"  href="#">徐再思《水仙子·夜雨》</a>
+				</div>
+				<div class="count">
+					<a  class="a1"  href="#">一声梧叶一声秋，一点芭蕉一点愁，三更归梦三更后。</a>
+					<span class="span1">——</span>
+					<a  class="a1"  href="#">徐再思《水仙子·夜雨》</a>
+				</div>
+				<div class="count">
+					<a  class="a1"  href="#">一声梧叶一声秋，一点芭蕉一点愁，三更归梦三更后。</a>
+					<span class="span1">——</span>
+					<a  class="a1"  href="#">徐再思《水仙子·夜雨》</a>
+				</div>
+			</div>
+		</div>
+		<div class="famous-area-right">
+			<div class="title">
+				类型
+			</div>
+			<div class="count">
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+				<a class="a2" href="#">咏物</a>
+			</div>
+		</div>
+	</div>
+  
+  
+  
+  body{
+	margin: 0;
+	padding: 0;
+	font-family: Poppins;
+}
+.navbar{
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction:row;
+	flex-wrap: wrap;
+	background-color: #707038;
+	width: 100%;
+	height: 70px;
+	z-index: 1;  
+}
+.nav{
+	display: flex;
+	justify-content: right;
+	list-style: none;
+	margin-right:15%; 
+	font-weight: bold;
+	font-size: 20px;
+}
+.logo{
+	flex: 1 1 auto;
+	margin-left:10%;
+	text-transform: uppercase;
+	letter-spacing: 1px; 
+	font-weight: bold;
+	font-size: 35px;
+	color: #fff;
+}
+a{
+	margin: 15px;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+a:hover{
+	color: #000;
+}
+.banner-area{
+	position: relative;
+	background-image: url();
+	width: 100%;
+	height: 100vh;
+	background-repeat: no-repeat;
+	-webkit-background-size:cover;
+	background-size: cover;
+}
+.recommend-area, .verse-area, .famous-area, .author-area, .ancient-area{
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 100%;
+	height: 969px;
+}
+.text-part{
+	width: 65%;
+	height: 80%;
+}
+h1{
+	font-size: 50px;
+	font-family: Audiowide;
+}
+p{
+	font-size: 24px;
+	line-height: 50px;
+}
+.recommend-area, .famous-area, .ancient-area{
+	background-color: #fefefe;
+}
+.verse-area, .author-area{
+	background-color: #262626;
+	color: #fff;
+}
+html{
+	scroll-behavior: smooth;
+}
+.famous-area{
+	background-color: #E1E0C7;
+}
+
+.famous-area-left{
+	width: 670px;
+    clear: left;
+    float: left;
+    padding: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    color: #0F0F0F;
+    display: block;
+}
+
+.famous-area-left-son{
+	height: auto;
+    clear: both;
+    background-color: #F0EFE2;
+    overflow: hidden;
+    margin-top: 20px;
+    border: 1px solid #d7d5bc;
+    border-radius: 5px;
+    padding-bottom: 12px;
+}
+.cont{
+	height: auto;
+    clear: both;
+    font-size: 14px;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 200%;
+    overflow: hidden;
+    margin-top: 12px;
+    border-bottom: 1px dashed #DAD9D1;
+    padding-bottom: 7px;
+}
+
+.a1{
+	float: left;
+	font-size: 14px;
+    line-height: 200%;
+    color: #19537D;
+    text-decoration: none;
+    cursor: pointer;
+}
+.span1{
+	color: #65645F;
+    float: left;
+    margin-left: 5px;
+    margin-right: 10px;
+    line-height: 200%;
+}
+
+.famous-area-right{
+	float: left;
+	height: auto;
+    width: 298px;
+    margin-top: 20px;
+    float: left;
+    background-color: #F0EFE2;
+    overflow: hidden;
+    border: 1px solid #d7d5bc;
+    border-radius: 5px;
+}
+
+.title{
+	height: 25px;
+    line-height: 25px;
+    clear: both;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+
+.titleleft{
+	height: 21px;
+    width: 3px;
+    margin-top: 1px;
+    float: left;
+    clear: left;
+    background-color: #A2C241;
+    margin-right: 8px;
+}
+
+.count{
+	height: auto;
+    clear: both;
+    overflow: hidden;
+    padding-bottom: 20px;
+    display: block;
+}
+
+.a2{
+	font-size: 14px;
+    height: 22px;
+    line-height: 22px;
+    width: 70px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 20px;
+    text-align: center;
+    border: 1px solid #DAD9D1;
+    border-radius: 5px;
+    color: #19537D;
+    text-decoration: none;
+    cursor: pointer;
+}
